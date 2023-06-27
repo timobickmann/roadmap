@@ -4,21 +4,19 @@ import { FaHouse } from "react-icons/fa6";
 function Header() {
   return (
     <>
-      <header className="flex items-center justify-between px-20 py-2 bg-gray-900 text-neutral-200 w-full">
-        <div>
-          <Link to="/">
-            <FaHouse />
-          </Link>
-        </div>
-        <ul className="flex gap-2">
+      <nav className="flex w-full items-center justify-between px-20 py-2">
+        <Link to="/">
+          <FaHouse />
+        </Link>
+        <ul className="flex gap-5">
           <li>
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <Link to="/resources">Resources</Link>
           </li>
         </ul>
-      </header>
+      </nav>
     </>
   );
 }
