@@ -9,8 +9,11 @@ function Header() {
           <FaHouse />
         </Link>
         <ul className="flex gap-5">
-          <li>
+        <li>
             <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/roadmap">Roadmap</Link>
           </li>
           <li>
             <Link to="/resources">Resources</Link>
