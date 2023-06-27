@@ -1,7 +1,9 @@
 function About() {
   return (
     <>
-      <h1>About-Page</h1>
+      <div className="container mx-auto flex justify-center">
+        <h1 className="text-xl">About-Page</h1>
+      </div>
     </>
   );
 }

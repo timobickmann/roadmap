@@ -1,7 +1,9 @@
 function Home() {
   return (
     <>
-      <h1>Home-Page</h1>
+      <div className="container mx-auto flex justify-center">
+        <h1 className="text-xl">Home-Page</h1>
+      </div>
     </>
   );
 }

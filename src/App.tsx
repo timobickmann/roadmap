@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <Router>
-        <div className="container">
+        <div className="">
           <Header />
           <Routes>
             <Route index element={<Home />} />
