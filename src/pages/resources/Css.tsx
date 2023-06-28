@@ -8,10 +8,19 @@ function Css() {
       {data.map((element) => {
         return (
           <>
-            <div>{element.step}</div>
-            <p>{element.description}</p>
-            <p>{element.language}</p>
-            <p>{element.code}</p>
+            {element.language === "" ? (
+              <SetupStep
+                step={element.step}
+                description={element.description}
+              />
+            ) : (
+              <>
+                <div>{element.step}</div>
+                <p>{element.description}</p>
+                <p>{element.language}</p>
+                <p>{element.code}</p>
+              </>
+            )}
           </>
         );
       })}
