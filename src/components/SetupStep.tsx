@@ -11,7 +11,7 @@ interface IProps {
   file: string;
 }
 
-function SetupStepCodeBlock({
+function SetupStep({
   step,
   description,
   link,
@@ -40,7 +40,7 @@ function SetupStepCodeBlock({
                 <span>{file}</span>
                 <button
                   onClick={() => {
-                    navigator.clipboard.writeText({ code });
+                    navigator.clipboard.writeText(code);
                   }}
                   className="flex items-center gap-2"
                 >
@@ -59,4 +59,4 @@ function SetupStepCodeBlock({
   );
 }
 
-export default SetupStepCodeBlock;
+export default SetupStep;

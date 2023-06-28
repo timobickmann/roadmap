@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <Router>
-        <div className="min-h-screen bg-gray-700 font-mono text-gray-200">
+        <div className="min-h-screen bg-gray-700 font-mono text-gray-300">
           <Header />
           <Routes>
             <Route index element={<Home />} />
