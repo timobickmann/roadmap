@@ -1,0 +1,20 @@
+[
+  {
+    "step": 1,
+    "description": "lorem ipsum 1",
+    "language": "",
+    "code": ""
+  },
+  {
+    "step": 2,
+    "description": "lorem ipsum 2",
+    "language": "html",
+    "code": "test-html"
+  },
+  {
+    "step": 3,
+    "description": "lorem ipsum 3",
+    "language": "",
+    "code": ""
+  }
+]
