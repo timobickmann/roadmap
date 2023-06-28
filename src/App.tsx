@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Resources from "./pages/Resources";
 import Roadmap from "./pages/Roadmap";
 import Css from "./pages/resources/Css";
+import Tailwind from "./pages/resources/Tailwind";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <Route path="/roadmap" element={<Roadmap />} />
             <Route path="/resources" element={<Resources />} />
             <Route path="/resources/css" element={<Css />} />
+            <Route path="/resources/tailwind" element={<Tailwind />} />
           </Routes>
         </div>
       </Router>

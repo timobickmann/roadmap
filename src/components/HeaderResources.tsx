@@ -9,7 +9,7 @@ function HeaderResources() {
             <Link to="css">CSS</Link>
           </li>
           <li>
-            <Link to="tbd">tbd</Link>
+            <Link to="tailwind">Tailwind</Link>
           </li>
           <li>
             <Link to="tbd">tbd</Link>
