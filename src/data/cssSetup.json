@@ -4,26 +4,26 @@
     "description": "lorem ipsum 2",
     "link": "",
     "linktext": "",
-    "language": "html",
+    "language": "css",
     "file": "file.test",
-    "code": "div {\n  background-color: blue;\n}\n"
+    "code": "div {\n  background-color: blue;\n}"
   },
   {
     "step": "2",
     "description": "lorem ipsum 2",
     "link": "",
     "linktext": "",
-    "language": "html",
+    "language": "css",
     "file": "file.test",
-    "code": "test-html"
+    "code": "test-code"
   },
   {
     "step": "2",
     "description": "lorem ipsum 2",
     "link": "",
     "linktext": "",
-    "language": "html",
+    "language": "css",
     "file": "file.test",
-    "code": "test-html"
+    "code": "test-code"
   }
 ]

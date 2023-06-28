@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { FaCopy } from "react-icons/fa6";
 
 interface IProps {
   step: string;
@@ -32,14 +33,22 @@ function SetupStepCodeBlock({
           <h1>Step: {step}</h1>
           <p>Description: {description}</p>
           <Link to={link}>{linktext}</Link>
-          <p>File: {file}</p>
           <pre>
-            <div className="pb-2 w-96 rounded-md bg-black">
-              <div className="relative flex items-center justify-between rounded-t-md bg-gray-800 px-4 py-2 font-sans text-xs text-gray-200">
+            <div className="w-96 rounded-md bg-black pb-1 font-sans">
+              <div className="flex items-center justify-between rounded-t-md bg-gray-800 px-4 py-2 text-xs">
                 <span>{language}</span>
-                <span>copy code</span>
+                <span>{file}</span>
+                <button
+                  onClick={() => {
+                    navigator.clipboard.writeText({ code });
+                  }}
+                  className="flex items-center gap-2"
+                >
+                  <FaCopy />
+                  copy code
+                </button>
               </div>
-              <div className="overflow-y-auto m-4">
+              <div className="m-5 overflow-y-auto text-sm">
                 <code className="">{code}</code>
               </div>
             </div>
@@ -49,4 +58,5 @@ function SetupStepCodeBlock({
     </>
   );
 }
+
 export default SetupStepCodeBlock;
