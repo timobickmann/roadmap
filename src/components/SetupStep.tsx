@@ -1,7 +1,10 @@
-function SetupStep() {
+function SetupStep({ step, description }) {
   return (
     <>
-      <h1></h1>
+      <div>
+        <h1>Step: {step}</h1>
+        <p>Description: {description}</p>
+      </div>
     </>
   );
 }
