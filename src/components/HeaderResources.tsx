@@ -6,10 +6,10 @@ function HeaderResources() {
       <nav className="flex w-full justify-center">
         <ul className="flex gap-5">
           <li>
-            <Link to="css">CSS</Link>
+            <Link to="/resources/css">CSS</Link>
           </li>
           <li>
-            <Link to="tailwind">Tailwind</Link>
+            <Link to="/resources/tailwind">Tailwind</Link>
           </li>
           <li>
             <Link to="tbd">tbd</Link>
