@@ -1,4 +1,11 @@
-function SetupStepCodeBlock({ step, description, language, code }) {
+interface IProps {
+  step: number;
+  language: string;
+  description: string;
+  code: string;
+}
+
+function SetupStepCodeBlock({ step, description, language, code } : IProps) {
   return (
     <>
       <div>
