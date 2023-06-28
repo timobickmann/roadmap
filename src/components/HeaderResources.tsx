@@ -12,7 +12,7 @@ function HeaderResources() {
             <Link to="/resources/tailwind">Tailwind</Link>
           </li>
           <li>
-            <Link to="tbd">tbd</Link>
+            <Link to="/">tbd</Link>
           </li>
         </ul>
       </nav>

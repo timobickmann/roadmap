@@ -25,16 +25,16 @@ function SetupStep({
       {language === "" ? (
         <div className="container mx-auto my-10">
           <h1>Step: {step}</h1>
-          <p>Description: {description}</p>
+          <p>{description}</p>
           <Link to={link}>{linktext}</Link>
         </div>
       ) : (
         <div className="container mx-auto my-10 mb-4 rounded-md">
           <h1>Step: {step}</h1>
-          <p>Description: {description}</p>
+          <p>{description}</p>
           <Link to={link}>{linktext}</Link>
           <pre>
-            <div className="w-96 rounded-md bg-black pb-1 font-sans">
+            <div className="w-min rounded-md bg-black pb-1 font-sans mt-4">
               <div className="flex items-center justify-between rounded-t-md bg-gray-800 px-4 py-2 text-xs">
                 <span>{language}</span>
                 <span>{file}</span>

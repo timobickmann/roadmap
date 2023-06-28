@@ -1,29 +1,47 @@
 [
   {
-    "step": "1 - Create Vite Project",
-    "description": "",
+    "step": "1 - Create Vite",
+    "description": "Vite Project created?",
     "link": "/vite",
     "linktext": "Vite Setup",
     "language": "",
-    "file": "file.test",
-    "code": ""
-  },
-  {
-    "step": "2",
-    "description": "lorem ipsum 2",
-    "link": "",
-    "linktext": "",
-    "language": "html",
-    "file": "file.test",
-    "code": "test-html"
-  },
-  {
-    "step": "3",
-    "description": "lorem ipsum 3",
-    "link": "",
-    "linktext": "",
-    "language": "",
     "file": "",
     "code": ""
+  },
+  {
+    "step": "2 - Install Tailwind",
+    "description": "",
+    "link": "",
+    "linktext": "",
+    "language": "bash",
+    "file": "",
+    "code": "npm install -D tailwindcss postcss autoprefixer\nnpx tailwindcss init -p"
+  },
+  {
+    "step": "3 - Configure Tailwind",
+    "description": "",
+    "link": "",
+    "linktext": "",
+    "language": "js",
+    "file": "tailwind.config.js",
+    "code": "/** @type {import('tailwindcss').Config} */\nexport default {\n  content: [\n    \"./index.html\",\n    \"./src/**/*.{js,ts,jsx,tsx}\",\n  ],\n  theme: {\n    extend: {},\n  },\n  plugins: [],\n}"
+  },
+  {
+    "step": "4 - Add Tailwind to CSS",
+    "description": "",
+    "link": "",
+    "linktext": "",
+    "language": "css",
+    "file": "index.css",
+    "code": "@tailwind base;\n@tailwind components;\n@tailwind utilities;"
+  },
+  {
+    "step": "5 - Install Prettier Plugin",
+    "description": "",
+    "link": "",
+    "linktext": "",
+    "language": "bash",
+    "file": "",
+    "code": "npm install -D prettier prettier-plugin-tailwindcss"
   }
 ]

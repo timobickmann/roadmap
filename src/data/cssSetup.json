@@ -1,29 +1,11 @@
 [
   {
-    "step": "2",
+    "step": "1",
     "description": "lorem ipsum 2",
     "link": "",
     "linktext": "",
-    "language": "css",
+    "language": "",
     "file": "file.test",
     "code": "div {\n  background-color: blue;\n}"
-  },
-  {
-    "step": "2",
-    "description": "lorem ipsum 2",
-    "link": "",
-    "linktext": "",
-    "language": "css",
-    "file": "file.test",
-    "code": "test-code"
-  },
-  {
-    "step": "2",
-    "description": "lorem ipsum 2",
-    "link": "",
-    "linktext": "",
-    "language": "css",
-    "file": "file.test",
-    "code": "test-code"
   }
 ]
