@@ -28,13 +28,22 @@ function SetupStepCodeBlock({
           <Link to={link}>{linktext}</Link>
         </div>
       ) : (
-        <div className="container mx-auto my-10">
+        <div className="container mx-auto my-10 mb-4 rounded-md">
           <h1>Step: {step}</h1>
           <p>Description: {description}</p>
           <Link to={link}>{linktext}</Link>
           <p>File: {file}</p>
-          <p>Language: {language}</p>
-          <p>Code Block: {code}</p>
+          <pre>
+            <div className="pb-2 w-96 rounded-md bg-black">
+              <div className="relative flex items-center justify-between rounded-t-md bg-gray-800 px-4 py-2 font-sans text-xs text-gray-200">
+                <span>{language}</span>
+                <span>copy code</span>
+              </div>
+              <div className="overflow-y-auto m-4">
+                <code className="">{code}</code>
+              </div>
+            </div>
+          </pre>
         </div>
       )}
     </>

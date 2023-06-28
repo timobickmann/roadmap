@@ -5,7 +5,7 @@
     "link": "/vite",
     "linktext": "Vite Setup",
     "language": "",
-    "file": "",
+    "file": "file.test",
     "code": ""
   },
   {
@@ -14,7 +14,7 @@
     "link": "",
     "linktext": "",
     "language": "html",
-    "file": "",
+    "file": "file.test",
     "code": "test-html"
   },
   {

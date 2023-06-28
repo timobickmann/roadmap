@@ -5,7 +5,16 @@
     "link": "",
     "linktext": "",
     "language": "html",
-    "file": "",
+    "file": "file.test",
+    "code": "div {\n  background-color: blue;\n}\n"
+  },
+  {
+    "step": "2",
+    "description": "lorem ipsum 2",
+    "link": "",
+    "linktext": "",
+    "language": "html",
+    "file": "file.test",
     "code": "test-html"
   },
   {
@@ -14,16 +23,7 @@
     "link": "",
     "linktext": "",
     "language": "html",
-    "file": "",
-    "code": "test-html"
-  },
-  {
-    "step": "2",
-    "description": "lorem ipsum 2",
-    "link": "",
-    "linktext": "",
-    "language": "html",
-    "file": "",
+    "file": "file.test",
     "code": "test-html"
   }
 ]
