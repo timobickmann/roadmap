@@ -3,21 +3,29 @@ import { Link } from "react-router-dom";
 function SidebarResources() {
   return (
     <>
-      <aside className="sticky top-10 ml-6">
+      <aside className="sticky min-h-screen bg-gray-800 top-0 px-6">
         <nav className="">
-          <ul className="flex flex-col gap-5">
+          <ul className="flex flex-col gap-5 pt-10">
             <li>
-              <Link to="/resources/css">CSS</Link>
+              CSS
               <ul>
                 <li>Setup</li>
                 <li>Resources</li>
               </ul>
             </li>
             <li>
-              <Link to="/resources/tailwind">Tailwind</Link>
+              Tailwind
+              <ul>
+                <li>
+                  <Link to="/resources/tailwind/setup">Setup</Link>
+                </li>
+                <li>
+                  <Link to="/resources/tailwind">Resources</Link>
+                </li>
+              </ul>
             </li>
             <li>
-              <Link to="/">tbd</Link>
+              tbd
             </li>
           </ul>
         </nav>

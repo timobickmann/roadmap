@@ -4,7 +4,7 @@ import SetupStep from "../../components/SetupStep";
 function Tailwind() {
   return (
     <>
-      <div>
+      <div className="flex flex-col gap-10">
         {data.map((element) => {
           return (
             <>

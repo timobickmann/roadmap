@@ -23,14 +23,14 @@ function SetupStep({
   return (
     <>
       {language === "" ? (
-        <div className="my-10">
-          <h1>{step}</h1>
+        <div className="">
+          <h2>{step}</h2>
           <p>{description}</p>
           <Link to={link}>{linktext}</Link>
         </div>
       ) : (
-        <div className="my-10">
-          <h1>{step}</h1>
+        <div className="">
+          <h2>{step}</h2>
           <p>{description}</p>
           <Link to={link}>{linktext}</Link>
           <CodeBlock file={file} language={language} code={code} />
