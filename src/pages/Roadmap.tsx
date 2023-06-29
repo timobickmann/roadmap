@@ -1,8 +1,28 @@
 // @ts-nocheck
 
+import { useRef } from "react";
+
 function Roadmap() {
   return (
     <>
+      <button
+        className="mr-10"
+        onClick={() => {
+          const svgElement = document.getElementById("html-box");
+          svgElement.style.fill = "red";
+        }}
+      >
+        HTML Box rot
+      </button>
+      <button
+        onClick={() => {
+          const svgElement = document.getElementById("html-box");
+          svgElement.style.fill = "green";
+        }}
+      >
+        HTML Box green
+      </button>
+
       <svg
         viewBox="0 0 625 1150"
         xmlns="http://www.w3.org/2000/svg"
@@ -229,6 +249,7 @@ function Roadmap() {
         </g>
         <g>
           <path
+            id="html-box"
             fill="#fff"
             stroke="#000"
             strokeWidth=".83px"
