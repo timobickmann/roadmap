@@ -7,11 +7,15 @@ export default {
     extend: {},
   },
   plugins: [
-    plugin(function ({ addBase }) {
+    plugin(function ({ addBase, theme }) {
       addBase({
         a: { color: "rgb(157, 178, 191)", textDecoration: "underline" },
+        html: {
+          color: "#d1d5db",
+          backgroundColor: "#374151",
+          fontFamily: theme("fontFamily.mono"),
+        },
       });
     }),
   ],
 };
-
