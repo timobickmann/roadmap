@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 
-function HeaderResources() {
+function SidebarResources() {
   return (
     <>
-      <aside className="fixed w-48 top-20 ml-6">
+      <aside className="sticky top-20 ml-6">
         <nav className="">
           <ul className="flex flex-col gap-5">
             <li>
@@ -26,4 +26,4 @@ function HeaderResources() {
   );
 }
 
-export default HeaderResources;
+export default SidebarResources;
