@@ -1,6 +1,6 @@
 [
   {
-    "step": "1 - Create Vite",
+    "step": "Step 1 - Create Vite",
     "description": "Vite Project created?",
     "link": "/vite",
     "linktext": "Vite Setup",
@@ -9,7 +9,7 @@
     "code": ""
   },
   {
-    "step": "2 - Install Tailwind",
+    "step": "Step 2 - Install Tailwind",
     "description": "",
     "link": "",
     "linktext": "",
@@ -18,7 +18,7 @@
     "code": "npm install -D tailwindcss postcss autoprefixer\nnpx tailwindcss init -p"
   },
   {
-    "step": "3 - Configure Tailwind",
+    "step": "Step 3 - Configure Tailwind",
     "description": "",
     "link": "",
     "linktext": "",
@@ -27,7 +27,7 @@
     "code": "/** @type {import('tailwindcss').Config} */\nexport default {\n  content: [\n    \"./index.html\",\n    \"./src/**/*.{js,ts,jsx,tsx}\",\n  ],\n  theme: {\n    extend: {},\n  },\n  plugins: [],\n}"
   },
   {
-    "step": "4 - Add Tailwind to CSS",
+    "step": "Step 4 - Add Tailwind to CSS",
     "description": "",
     "link": "",
     "linktext": "",
@@ -36,7 +36,7 @@
     "code": "@tailwind base;\n@tailwind components;\n@tailwind utilities;"
   },
   {
-    "step": "5 - Install Prettier Plugin",
+    "step": "Step 5 - Install Prettier Plugin",
     "description": "",
     "link": "",
     "linktext": "",
