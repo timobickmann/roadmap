@@ -12,29 +12,22 @@ function App() {
   return (
     <>
       <Router>
-        <div className="flex">
-          <div>
-            <Routes>
-              <Route path="/resources/*" element={<SidebarResources />} />
-            </Routes>
-          </div>
-          <div className="w-full ml-20">
-              <Header />
-              <Routes>
-                <Route index element={<Home />} />
-                <Route path="/roadmap" element={<Roadmap />} />
-                <Route path="/resources" element={<Resources />} />
-                <Route path="/resources/css" element={<Css />} />
-                <Route
-                  path="/resources/tailwind"
-                  element={<TailwindResources />}
-                />
-                <Route
-                  path="/resources/tailwind/setup"
-                  element={<TailwindSetup />}
-                />
-              </Routes>
-          </div>
+        <Routes>
+          <Route path="/resources/*" element={<SidebarResources />} />
+        </Routes>
+        <Header />
+        <div className="my-20 px-48">
+          <Routes>
+            <Route index element={<Home />} />
+            <Route path="/roadmap" element={<Roadmap />} />
+            <Route path="/resources" element={<Resources />} />
+            <Route path="/resources/css" element={<Css />} />
+            <Route path="/resources/tailwind" element={<TailwindResources />} />
+            <Route
+              path="/resources/tailwind/setup"
+              element={<TailwindSetup />}
+            />
+          </Routes>
         </div>
       </Router>
     </>
