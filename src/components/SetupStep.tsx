@@ -23,13 +23,13 @@ function SetupStep({
   return (
     <>
       {language === "" ? (
-        <div className="container mx-auto my-10">
+        <div className="my-10">
           <h1>{step}</h1>
           <p>{description}</p>
           <Link to={link}>{linktext}</Link>
         </div>
       ) : (
-        <div className="container mx-auto my-10">
+        <div className="my-10">
           <h1>{step}</h1>
           <p>{description}</p>
           <Link to={link}>{linktext}</Link>

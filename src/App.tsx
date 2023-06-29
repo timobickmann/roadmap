@@ -10,21 +10,17 @@ function App() {
   return (
     <>
       <Router>
-        <div className="min-h-screen bg-gray-700 font-mono text-gray-300 pb-20">
           <Header />
-          <Routes>
-            <Route index element={<Home />} />
-            <Route path="/roadmap" element={<Roadmap />} />
-            <Route path="/resources" element={<Resources />} />
-            <Route path="/resources/css" element={<Css />} />
-            <Route path="/resources/tailwind" element={<Tailwind />} />
-          </Routes>
-        </div>
+            <Routes>
+              <Route index element={<Home />} />
+              <Route path="/roadmap" element={<Roadmap />} />
+              <Route path="/resources" element={<Resources />} />
+              <Route path="/resources/css" element={<Css />} />
+              <Route path="/resources/tailwind" element={<Tailwind />} />
+            </Routes>
       </Router>
     </>
   );
 }
 
 export default App;
-
-

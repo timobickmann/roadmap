@@ -1,13 +1,9 @@
 import { Link } from "react-router-dom";
-import { FaHouse } from "react-icons/fa6";
 
 function Header() {
   return (
     <>
-      <nav className="flex w-full items-center justify-between px-20 py-2">
-        <Link to="/">
-          <FaHouse />
-        </Link>
+      <nav className="flex w-full justify-end px-20 py-2 sticky top-0">
         <ul className="flex gap-5">
         <li>
             <Link to="/">Home</Link>
