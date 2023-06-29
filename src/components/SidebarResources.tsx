@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function SidebarResources() {
   return (
     <>
-      <aside className="sticky top-20 ml-6">
+      <aside className="sticky top-10 ml-6">
         <nav className="">
           <ul className="flex flex-col gap-5">
             <li>
