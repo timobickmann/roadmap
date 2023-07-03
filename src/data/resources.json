@@ -1,38 +1,30 @@
 [
   {
     "category": "tailwind",
-    "resources": [
-      {
-        "title": "Cheat Sheet",
-        "description": "If you know CSS this is literally all you need to use Tailwind",
-        "link": "https://nerdcave.com/tailwind-cheat-sheet",
-        "linktext": "nerdcave.com"
-      },
-      {
-        "title": "Tailwind Documentation",
-        "description": "",
-        "link": "https://tailwindcss.com/docs/installation",
-        "linktext": "tailwindcss.com"
-      }
-    ]
+    "title": "Cheat Sheet",
+    "description": "If you know CSS this is literally all you need to use Tailwind",
+    "link": "https://nerdcave.com/tailwind-cheat-sheet",
+    "linktext": "nerdcave.com"
   },
-
+  {
+    "category": "tailwind",
+    "title": "Tailwind Documentation",
+    "description": "",
+    "link": "https://tailwindcss.com/docs/installation",
+    "linktext": "tailwindcss.com"
+  },
   {
     "category": "vite",
-    "resources": [
-      {
-        "title": "Community Templates",
-        "description": "Templates to start your project with",
-        "link": "https://github.com/vitejs/awesome-vite#templates",
-        "linktext": "GitHub"
-      },
-
-      {
-        "title": "Edwards Starter Projects",
-        "description": "",
-        "link": "https://starters.tanguay.eu",
-        "linktext": "starters.tanguay.eu"
-      }
-    ]
+    "title": "Community Templates",
+    "description": "Templates to start your project with",
+    "link": "https://github.com/vitejs/awesome-vite#templates",
+    "linktext": "GitHub"
+  },
+  {
+    "category": "vite",
+    "title": "Edwards Starter Projects",
+    "description": "",
+    "link": "https://starters.tanguay.eu",
+    "linktext": "starters.tanguay.eu"
   }
 ]

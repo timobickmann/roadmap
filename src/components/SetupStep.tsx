@@ -1,37 +1,43 @@
 import { Link } from "react-router-dom";
 import CodeBlock from "./CodeBlock";
+import data from "../data/setup.json";
 
 interface IProps {
-  step: string;
-  language: string;
-  description: string;
-  link: string;
-  linktext: string;
-  code: string;
-  file: string;
+  category: string;
 }
 
-function SetupStep({
-  step,
-  description,
-  link,
-  linktext,
-  language,
-  code,
-  file,
-}: IProps) {
+function SetupStep({ category }: IProps) {
+  const findData = data.filter((item) => item.category === category);
   return (
     <>
-      <div>
-        <h2 className="mb-3 text-xl">{step}</h2>
-        <p className="whitespace-pre-wrap">{description}</p>
-        <Link to={link} target="_blank" rel="noopener noreferrer">
-          {linktext}
-        </Link>
-        {language !== "" && (
-          <CodeBlock file={file} language={language} code={code} />
-        )}
-      </div>
+      {findData.map((element) => {
+        return (
+          <>
+            <div className="mb-5">
+              <h2 className="mb-3 text-xl">{element.step}</h2>
+              {element.description !== "" && (
+                <p className="whitespace-pre-wrap">{element.description}</p>
+              )}
+              {element.link !== "" && (
+                <Link
+                  to={element.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {element.linktext}
+                </Link>
+              )}
+              {element.language !== "" && (
+                <CodeBlock
+                  file={element.file}
+                  language={element.language}
+                  code={element.code}
+                />
+              )}
+            </div>
+          </>
+        );
+      })}
     </>
   );
 }
