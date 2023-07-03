@@ -86,7 +86,7 @@
         "linktext": "",
         "language": "bash",
         "file": "",
-        "code": "nyarn create vite"
+        "code": "yarn create vite"
       },
       {
         "step": "",
