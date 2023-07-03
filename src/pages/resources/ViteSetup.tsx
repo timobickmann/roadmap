@@ -1,11 +1,14 @@
-import data from "../../data/viteSetup.json";
+// @ts-nocheck
+
+import data from "../../data/setup.json";
 import SetupStep from "../../components/SetupStep";
 
 function ViteSetup() {
+  const findData = data.find((item) => item.category === "vite");
   return (
     <>
       <div className="flex flex-col gap-10">
-        {data.map((element) => {
+        {findData.steps.map((element) => {
           return (
             <>
               <SetupStep

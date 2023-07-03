@@ -1,14 +1,13 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
+import SidebarResources from "./components/SidebarResources";
 import Home from "./pages/Home";
 import Resources from "./pages/Resources";
 import Roadmap from "./pages/Roadmap";
-import Css from "./pages/resources/Css";
 import ViteResources from "./pages/resources/ViteResources";
 import ViteSetup from "./pages/resources/ViteSetup";
 import TailwindResources from "./pages/resources/TailwindResources";
 import TailwindSetup from "./pages/resources/TailwindSetup";
-import SidebarResources from "./components/SidebarResources";
 
 function App() {
   return (
@@ -23,7 +22,6 @@ function App() {
             <Route index element={<Home />} />
             <Route path="/roadmap" element={<Roadmap />} />
             <Route path="/resources" element={<Resources />} />
-            <Route path="/resources/css" element={<Css />} />
             <Route path="/resources/vite" element={<ViteResources />} />
             <Route path="/resources/vite/setup" element={<ViteSetup />} />
             <Route path="/resources/tailwind" element={<TailwindResources />} />

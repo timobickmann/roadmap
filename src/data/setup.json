@@ -1,0 +1,129 @@
+[
+  {
+    "category": "tailwind",
+    "steps": [
+      {
+        "step": "Tailwind for Vite",
+        "description": "",
+        "link": "",
+        "linktext": "",
+        "language": "",
+        "file": "",
+        "code": ""
+      },
+      {
+        "step": "Step 1 - Create Vite",
+        "description": "Vite Project created?",
+        "link": "/resources/vite/setup",
+        "linktext": "Vite Setup",
+        "language": "",
+        "file": "",
+        "code": ""
+      },
+      {
+        "step": "Step 2 - Install Tailwind",
+        "description": "",
+        "link": "",
+        "linktext": "",
+        "language": "bash",
+        "file": "",
+        "code": "npm install -D tailwindcss postcss autoprefixer\nnpx tailwindcss init -p"
+      },
+      {
+        "step": "Step 3 - Configure Tailwind",
+        "description": "",
+        "link": "",
+        "linktext": "",
+        "language": "js",
+        "file": "tailwind.config.js",
+        "code": "/** @type {import('tailwindcss').Config} */\nexport default {\n  content: [\n    \"./index.html\",\n    \"./src/**/*.{js,ts,jsx,tsx}\",\n  ],\n  theme: {\n    extend: {},\n  },\n  plugins: [],\n}"
+      },
+      {
+        "step": "Step 4 - Add Tailwind to CSS",
+        "description": "",
+        "link": "",
+        "linktext": "",
+        "language": "css",
+        "file": "index.css",
+        "code": "@tailwind base;\n@tailwind components;\n@tailwind utilities;"
+      },
+      {
+        "step": "Step 5 - Install Prettier Plugin",
+        "description": "",
+        "link": "",
+        "linktext": "",
+        "language": "bash",
+        "file": "",
+        "code": "npm install -D prettier prettier-plugin-tailwindcss"
+      }
+    ]
+  },
+  {
+    "category": "vite",
+    "steps": [
+      {
+        "step": "Step 1 - Node.js installed?",
+        "description": "Vite requires Node.js version 14.18+, 16+. However, some templates require a higher Node.js version to work, please upgrade if your package manager warns about it.",
+        "link": "https://nodejs.org/en",
+        "linktext": "Node.js",
+        "language": "",
+        "file": "",
+        "code": ""
+      },
+      {
+        "step": "Step 2 - Create Vite App",
+        "description": "",
+        "link": "",
+        "linktext": "",
+        "language": "bash",
+        "file": "",
+        "code": "npm create vite@latest"
+      },
+      {
+        "step": "",
+        "description": "",
+        "link": "",
+        "linktext": "",
+        "language": "bash",
+        "file": "",
+        "code": "nyarn create vite"
+      },
+      {
+        "step": "",
+        "description": "",
+        "link": "",
+        "linktext": "",
+        "language": "bash",
+        "file": "",
+        "code": "pnpm create vite"
+      },
+      {
+        "step": "Optional - Use Template",
+        "description": "Choose a community template to start your project",
+        "link": "https://github.com/vitejs/awesome-vite#templates",
+        "linktext": "GitHub Vite Templates",
+        "language": "bash",
+        "file": "",
+        "code": "npm create vite@latest --template [templatename]"
+      },
+      {
+        "step": "Step 3 - Follow Prompts",
+        "description": "Type a name for your project\nSelect the framework you wanna use for your project\nChoose TypeScript or JavaScript (Ignore SWC for now)",
+        "link": "",
+        "linktext": "",
+        "language": "",
+        "file": "",
+        "code": ""
+      },
+      {
+        "step": "Step 4 - Install Dependencies and Start Server",
+        "description": "",
+        "link": "",
+        "linktext": "",
+        "language": "bash",
+        "file": "",
+        "code": "cd [your-projectname]\nnpm i\nnpm run dev\ncode ."
+      }
+    ]
+  }
+]
