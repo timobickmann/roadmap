@@ -13,7 +13,9 @@ function Resource({ title, description, link, linktext }: IProps) {
       <div>
         <h2>{title}</h2>
         <p>{description}</p>
-        <a href={link}>{linktext}</a>
+        <Link to={link} target="_blank" rel="noopener noreferrer">
+          {linktext}
+        </Link>
       </div>
     </>
   );
