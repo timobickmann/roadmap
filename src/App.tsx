@@ -6,8 +6,10 @@ import Resources from "./pages/Resources";
 import Roadmap from "./pages/Roadmap";
 import ViteResources from "./pages/resources/ViteResources";
 import ViteSetup from "./pages/resources/ViteSetup";
+import ViteHowTos from "./pages/resources/ViteHowTos";
 import TailwindResources from "./pages/resources/TailwindResources";
 import TailwindSetup from "./pages/resources/TailwindSetup";
+import TailwindHowTos from "./pages/resources/TailwindHowTos";
 
 function App() {
   return (
@@ -24,11 +26,13 @@ function App() {
             <Route path="/resources" element={<Resources />} />
             <Route path="/resources/vite" element={<ViteResources />} />
             <Route path="/resources/vite/setup" element={<ViteSetup />} />
+            <Route path="/resources/vite/howtos" element={<ViteHowTos/>} />
             <Route path="/resources/tailwind" element={<TailwindResources />} />
             <Route
               path="/resources/tailwind/setup"
               element={<TailwindSetup />}
             />
+            <Route path="/resources/tailwind/howtos" element={<TailwindHowTos/>} />
           </Routes>
         </div>
       </Router>

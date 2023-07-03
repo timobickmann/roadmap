@@ -1,3 +1,4 @@
+
 [
   {
     "category": "tailwind",
@@ -11,7 +12,7 @@
   },
   {
     "category": "tailwind",
-    "step": "Step 1 - Create Vite",
+    "step": "Step 1 - Create Vite Project",
     "description": "Vite Project created?",
     "link": "/resources/vite/setup",
     "linktext": "Vite Setup",

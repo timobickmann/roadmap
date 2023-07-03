@@ -16,6 +16,9 @@ function SidebarResourcesItem({ item }: IProps) {
           <li>
             <Link to={`/resources/${item.toLowerCase()}`}>Resources</Link>
           </li>
+          <li>
+            <Link to={`/resources/${item.toLowerCase()}/howtos`}>How-Tos</Link>
+          </li>
         </ul>
       </li>
     </>

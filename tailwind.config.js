@@ -9,7 +9,7 @@ export default {
   plugins: [
     plugin(function ({ addBase, addUtilities, theme }) {
       addBase({
-        a: { color: "rgb(157, 178, 191)", textDecoration: "underline" },
+        a: { color: "rgb(157, 178, 191)", "text-decoration": "underline" },
         html: {
           color: "#d1d5db",
           "background-color": "#374151",
