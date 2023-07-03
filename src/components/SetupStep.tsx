@@ -24,15 +24,19 @@ function SetupStep({
     <>
       {language === "" ? (
         <div className="">
-          <h2>{step}</h2>
-          <p>{description}</p>
-          <Link to={link}>{linktext}</Link>
+          <h2 className="mb-3 text-xl">{step}</h2>
+          <p className="whitespace-pre-wrap">{description}</p>
+          <Link to={link} target="_blank" rel="noopener noreferrer">
+            {linktext}
+          </Link>
         </div>
       ) : (
         <div className="">
-          <h2>{step}</h2>
-          <p>{description}</p>
-          <Link to={link}>{linktext}</Link>
+          <h2 className="mb-3 text-xl">{step}</h2>
+          <p className="whitespace-pre-wrap">{description}</p>
+          <Link to={link} target="_blank" rel="noopener noreferrer">
+            {linktext}
+          </Link>
           <CodeBlock file={file} language={language} code={code} />
         </div>
       )}

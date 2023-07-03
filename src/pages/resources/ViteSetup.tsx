@@ -1,7 +1,7 @@
-import data from "../../data/tailwindSetup.json";
+import data from "../../data/viteSetup.json";
 import SetupStep from "../../components/SetupStep";
 
-function TailwindSetup() {
+function ViteSetup() {
   return (
     <>
       <div className="flex flex-col gap-10">
@@ -24,4 +24,4 @@ function TailwindSetup() {
     </>
   );
 }
-export default TailwindSetup;
+export default ViteSetup;

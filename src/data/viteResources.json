@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Community Templates",
+    "description": "Templates to start your project with",
+    "link": "https://github.com/vitejs/awesome-vite#templates",
+    "linktext": "GitHub"
+  },
+  {
+    "title": "Edwards Starter Projects",
+    "description": "",
+    "link": "https://starters.tanguay.eu/list/darkViteSimple",
+    "linktext": "starters.tanguay.eu"
+  }
+]

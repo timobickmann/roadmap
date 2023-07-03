@@ -1,8 +1,14 @@
 [
   {
-    "title": "Title",
-    "description": "description",
-    "link": "#",
-    "linktext": "Link"
+    "title": "Cheat Sheet",
+    "description": "If you know CSS this is literally all you need to use Tailwind",
+    "link": "https://nerdcave.com/tailwind-cheat-sheet",
+    "linktext": "nerdcave.com"
+  },
+  {
+    "title": "Tailwind Documentation",
+    "description": "",
+    "link": "https://tailwindcss.com/docs/installation",
+    "linktext": "tailwindcss.com"
   }
 ]

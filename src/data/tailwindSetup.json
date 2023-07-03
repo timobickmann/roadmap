@@ -2,7 +2,7 @@
   {
     "step": "Step 1 - Create Vite",
     "description": "Vite Project created?",
-    "link": "/vite",
+    "link": "/resources/vite/setup",
     "linktext": "Vite Setup",
     "language": "",
     "file": "",
