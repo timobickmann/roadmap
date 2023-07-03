@@ -1,5 +1,14 @@
 [
   {
+    "step": "Tailwind for Vite",
+    "description": "",
+    "link": "",
+    "linktext": "",
+    "language": "",
+    "file": "",
+    "code": ""
+  },
+  {
     "step": "Step 1 - Create Vite",
     "description": "Vite Project created?",
     "link": "/resources/vite/setup",
