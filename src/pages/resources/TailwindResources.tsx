@@ -1,4 +1,5 @@
 import data from "../../data/tailwindResources.json";
+import Resource from "../../components/Resource";
 
 function TailwindResources() {
   return (
@@ -7,11 +8,12 @@ function TailwindResources() {
         {data.map((element) => {
           return (
             <>
-              <div>
-                <h2>{element.title}</h2>
-                <p>{element.description}</p>
-                <a href={element.link}>{element.linktext}</a>
-              </div>
+              <Resource
+                title={element.title}
+                description={element.description}
+                link={element.link}
+                linktext={element.linktext}
+              />
             </>
           );
         })}
