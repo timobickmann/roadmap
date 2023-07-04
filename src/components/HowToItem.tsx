@@ -4,20 +4,16 @@ import { FaCaretDown } from "react-icons/fa6";
 import { FaCaretUp } from "react-icons/fa6";
 
 interface IProps {
-  subcategory: string;
-  findData: any[];
+  data: any[];
 }
 
-function HowToItem({ subcategory, findData }: IProps) {
+function HowToItem({ data }: IProps) {
   const [isOpened, setIsOpened] = useState(false);
 
   function handleClick() {
     setIsOpened(!isOpened);
   }
 
-  const findSubData = findData.filter(
-    (item) => item.subcategory === subcategory
-  );
   return (
     <>
       <div className="mb-6 border-2 p-4 pr-10">
@@ -28,13 +24,13 @@ function HowToItem({ subcategory, findData }: IProps) {
             </>
           ) : (
             <>
-              {findSubData[0].title} <FaCaretDown />
+              {data[0].title} <FaCaretDown />
             </>
           )}
         </button>
 
         {isOpened &&
-          findSubData.map((element) => {
+          data.map((element) => {
             return (
               <>
                 {element.title !== "" && (

@@ -6,13 +6,21 @@ interface IProps {
 }
 
 function HowTos({ category }: IProps) {
-  const findData = data.filter((item) => item.category === category);
-  return (
-    <>
-      <HowToItem subcategory="addCustomStyleToTailwind" findData={findData} />
-      <HowToItem subcategory="test" findData={findData} />
-    </>
-  );
+  let findData = data.filter((item) => item.category === category);
+  let filteredData = [];
+
+  while (findData.length > 0) {
+    const dataToPush = findData.filter(
+      (item) => item.subcategory === findData[0].subcategory
+    );
+    filteredData.push(dataToPush);
+    findData = findData.filter(
+      (item) => item.subcategory !== findData[0].subcategory
+    );
+  }
+  return filteredData.map((element) => {
+    return <HowToItem data={element} />;
+  });
 }
 
 export default HowTos;
