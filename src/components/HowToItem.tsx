@@ -34,10 +34,12 @@ function HowToItem({ data }: IProps) {
             return (
               <>
                 {element.title !== "" && (
-                  <h2 className="mb-3 mt-8 text-2xl">{element.title}</h2>
+                  <h2 className="mb-3 mt-8 text-center text-2xl sm:text-left">
+                    {element.title}
+                  </h2>
                 )}
                 {element.description !== "" && (
-                  <p className="mb-3 whitespace-pre-wrap mx-2 sm:mx-5">
+                  <p className="mx-2 mb-3 whitespace-pre-wrap sm:mx-5">
                     {element.description}
                   </p>
                 )}
