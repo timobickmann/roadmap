@@ -39,7 +39,7 @@ function HowToItem({ data }: IProps) {
                   </h2>
                 )}
                 {element.description !== "" && (
-                  <p className="mx-2 mb-3 whitespace-pre-wrap sm:mx-5">
+                  <p className="mx-2 mb-3 whitespace-pre-wrap text-center sm:mx-5 sm:text-left">
                     {element.description}
                   </p>
                 )}
