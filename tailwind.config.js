@@ -15,6 +15,7 @@ export default {
           "background-color": "#374151",
           "font-family": theme("fontFamily.mono"),
         },
+        body: { "overscroll-behavior": "none" },
       }),
         addUtilities({
           ".scrollbar-hide": {

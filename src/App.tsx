@@ -14,28 +14,37 @@ import TailwindHowTos from "./pages/resources/TailwindHowTos";
 function App() {
   return (
     <>
-      <Router>
-        <Routes>
-          <Route path="/resources/*" element={<SidebarResources />} />
-        </Routes>
-        <Header />
-        <div className="my-20 px-48">
+      <div className="flex">
+        <Router>
           <Routes>
-            <Route index element={<Home />} />
-            <Route path="/roadmap" element={<Roadmap />} />
-            <Route path="/resources" element={<Resources />} />
-            <Route path="/resources/vite" element={<ViteResources />} />
-            <Route path="/resources/vite/setup" element={<ViteSetup />} />
-            <Route path="/resources/vite/howtos" element={<ViteHowTos/>} />
-            <Route path="/resources/tailwind" element={<TailwindResources />} />
-            <Route
-              path="/resources/tailwind/setup"
-              element={<TailwindSetup />}
-            />
-            <Route path="/resources/tailwind/howtos" element={<TailwindHowTos/>} />
+            <Route path="/resources/*" element={<SidebarResources />} />
           </Routes>
-        </div>
-      </Router>
+          
+          <div className="mx-5 md:mx-10 lg:mx-20 mb-5 w-full">
+            <Header />
+            <Routes>
+              <Route index element={<Home />} />
+              <Route path="/roadmap" element={<Roadmap />} />
+              <Route path="/resources" element={<Resources />} />
+              <Route path="/resources/vite" element={<ViteResources />} />
+              <Route path="/resources/vite/setup" element={<ViteSetup />} />
+              <Route path="/resources/vite/howtos" element={<ViteHowTos />} />
+              <Route
+                path="/resources/tailwind"
+                element={<TailwindResources />}
+              />
+              <Route
+                path="/resources/tailwind/setup"
+                element={<TailwindSetup />}
+              />
+              <Route
+                path="/resources/tailwind/howtos"
+                element={<TailwindHowTos />}
+              />
+            </Routes>
+          </div>
+        </Router>
+      </div>
     </>
   );
 }
