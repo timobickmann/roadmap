@@ -1,16 +1,53 @@
 [
   {
     "category": "tailwind",
-    "title": "Tailwind how-to",
-    "description": "",
+    "subcategory": "addCustomStyleToTailwind",
+    "title": "Add custom Styles to Tailwind",
+    "description": "Description 1",
     "language": "",
     "file": "",
     "code": ""
   },
   {
-    "category": "vite",
-    "title": "Vite how-to",
-    "description": "",
+    "category": "tailwind",
+    "subcategory": "addCustomStyleToTailwind",
+    "title": "Add custom Styles to Tailwind",
+    "description": "Description 1",
+    "language": "",
+    "file": "",
+    "code": ""
+  },
+  {
+    "category": "tailwind",
+    "subcategory": "addCustomStyleToTailwind",
+    "title": "Add custom Styles to Tailwind",
+    "description": "Description 3",
+    "language": "",
+    "file": "",
+    "code": ""
+  },{
+    "category": "tailwind",
+    "subcategory": "test",
+    "title": "Test",
+    "description": "Description 1",
+    "language": "",
+    "file": "",
+    "code": ""
+  },
+  {
+    "category": "tailwind",
+    "subcategory": "test",
+    "title": "Test",
+    "description": "Description 1",
+    "language": "",
+    "file": "",
+    "code": ""
+  },
+  {
+    "category": "tailwind",
+    "subcategory": "test",
+    "title": "Test",
+    "description": "Description 3",
     "language": "",
     "file": "",
     "code": ""

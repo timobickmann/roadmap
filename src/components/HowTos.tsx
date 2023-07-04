@@ -1,33 +1,18 @@
-import CodeBlock from "./CodeBlock";
 import data from "../data/howTos.json";
+import HowToItem from "./HowToItem";
 
 interface IProps {
   category: string;
 }
 
-function Resource({ category }: IProps) {
+function HowTos({ category }: IProps) {
   const findData = data.filter((item) => item.category === category);
   return (
     <>
-      {findData.map((element) => {
-        return (
-          <>
-            <div className="mb-6 flex flex-col gap-1">
-              <h2 className="mb-3 text-xl">{element.title}</h2>
-              {element.description !== "" && <p>{element.description}</p>}
-              {element.language !== "" && (
-                <CodeBlock
-                  file={element.file}
-                  language={element.language}
-                  code={element.code}
-                />
-              )}
-            </div>
-          </>
-        );
-      })}
+      <HowToItem subcategory="addCustomStyleToTailwind" findData={findData} />
+      <HowToItem subcategory="test" findData={findData} />
     </>
   );
 }
 
-export default Resource;
+export default HowTos;
