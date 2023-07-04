@@ -30,11 +30,12 @@ function SetupStep({ category }: IProps) {
                 </Link>
               )}
               {element.code !== "" && (
-                <CodeBlock
+                <div className="mx-2 sm:mx-0">
+                  <CodeBlock
                   file={element.file}
                   language={element.language}
                   code={element.code}
-                />
+                /></div>
               )}
             </div>
           </>
