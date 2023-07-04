@@ -37,12 +37,12 @@ function HowToItem({ data }: IProps) {
                   <h2 className="mb-3 mt-8 text-2xl">{element.title}</h2>
                 )}
                 {element.description !== "" && (
-                  <p className="mb-3 whitespace-pre-wrap ml-5">
+                  <p className="mb-3 whitespace-pre-wrap mx-2 sm:mx-5">
                     {element.description}
                   </p>
                 )}
                 {element.code !== "" && (
-                  <div className="ml-5">
+                  <div className="mx-2 sm:ml-5">
                     <CodeBlock
                       file={element.file}
                       language={element.language}
