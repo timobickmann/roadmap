@@ -6,7 +6,7 @@ interface IProps {
   file: string;
 }
 
-function CodeBlock({ language, code, file }: IProps) {
+function CodeBlock({ code, file }: IProps) {
   return (
     <>
       <pre>
