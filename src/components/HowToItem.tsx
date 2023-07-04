@@ -20,7 +20,7 @@ function HowToItem({ subcategory, findData }: IProps) {
   );
   return (
     <>
-      <div className="mb-6 border-2 p-2">
+      <div className="mb-6 border-2 p-4 pr-10">
         <button className="mb-5 flex items-center gap-2" onClick={handleClick}>
           {isOpened ? (
             <>
@@ -38,15 +38,21 @@ function HowToItem({ subcategory, findData }: IProps) {
             return (
               <>
                 {element.title !== "" && (
-                  <h2 className="mb-3 text-xl">{element.title}</h2>
+                  <h2 className="mb-3 mt-8 text-2xl">{element.title}</h2>
                 )}
-                {element.description !== "" && <p className="mb-3">{element.description}</p>}
-                {element.language !== "" && (
-                  <CodeBlock
-                    file={element.file}
-                    language={element.language}
-                    code={element.code}
-                  />
+                {element.description !== "" && (
+                  <p className="mb-3 whitespace-pre-wrap ml-5">
+                    {element.description}
+                  </p>
+                )}
+                {element.code !== "" && (
+                  <div className="ml-5">
+                    <CodeBlock
+                      file={element.file}
+                      language={element.language}
+                      code={element.code}
+                    />
+                  </div>
                 )}
               </>
             );

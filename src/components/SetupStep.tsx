@@ -14,7 +14,7 @@ function SetupStep({ category }: IProps) {
         return (
           <>
             <div className="mb-5 flex flex-col gap-1">
-              <h2 className="mb-3 text-xl">{element.step}</h2>
+              <h2 className="mb-3 text-2xl">{element.step}</h2>
               {element.description !== "" && (
                 <p className="whitespace-pre-wrap">{element.description}</p>
               )}
@@ -27,7 +27,7 @@ function SetupStep({ category }: IProps) {
                   {element.linktext}
                 </Link>
               )}
-              {element.language !== "" && (
+              {element.code !== "" && (
                 <CodeBlock
                   file={element.file}
                   language={element.language}
