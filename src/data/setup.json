@@ -1,4 +1,3 @@
-
 [
   {
     "category": "tailwind",
@@ -27,7 +26,7 @@
     "link": "",
     "linktext": "",
     "language": "bash",
-    "file": "",
+    "file": "bash",
     "code": "npm install -D tailwindcss postcss autoprefixer\nnpx tailwindcss init -p"
   },
   {
@@ -57,7 +56,7 @@
     "link": "",
     "linktext": "",
     "language": "bash",
-    "file": "",
+    "file": "bash",
     "code": "npm install -D prettier prettier-plugin-tailwindcss"
   },
   {
@@ -79,7 +78,7 @@
     "link": "",
     "linktext": "",
     "language": "bash",
-    "file": "",
+    "file": "bash",
     "code": "npm create vite@latest"
   },
   {
@@ -90,7 +89,7 @@
     "link": "",
     "linktext": "",
     "language": "bash",
-    "file": "",
+    "file": "bash",
     "code": "yarn create vite"
   },
   {

@@ -12,8 +12,7 @@ function CodeBlock({ language, code, file }: IProps) {
       <pre>
         <div className="mt-4 w-min rounded-md bg-black pb-1 font-sans">
           <div className="flex items-center justify-between rounded-t-md bg-gray-800 px-4 py-2 text-xs">
-            <span>{language}</span>
-            <span className="px-10">{file}</span>
+            <div>{file}</div>
             <button
               onClick={() => {
                 navigator.clipboard.writeText(code);
