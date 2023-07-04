@@ -24,7 +24,7 @@ function CodeBlock({ language, code, file }: IProps) {
               copy code
             </button>
           </div>
-          <div className="px-2 my-5 w-[90vw] sm:w-72 md:w-[28rem] lg:w-auto lg:min-w-[28rem] overflow-y-auto text-sm">
+          <div className="px-2 my-5 w-[85vw] sm:w-72 md:w-[28rem] lg:w-auto lg:min-w-[28rem] overflow-y-auto text-sm">
             <code className="">{code}</code>
           </div>
         </div>
