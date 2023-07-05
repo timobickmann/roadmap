@@ -1,5 +1,3 @@
-//@ts-nocheck
-
 import { Link } from "react-router-dom";
 import { useState, useContext } from "react";
 import { FaCaretDown } from "react-icons/fa6";
@@ -11,7 +9,7 @@ interface IProps {
 }
 
 function SidebarResourcesItem({ item }: IProps) {
-  const { sidebarIsOpened, toggleSidebarIsOpened } = useContext(AppContext);
+  const { toggleSidebarIsOpened } = useContext(AppContext);
 
   const [isOpen, setIsOpen] = useState(false);
 

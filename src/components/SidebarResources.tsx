@@ -1,7 +1,6 @@
-//@ts-nocheck
 import SidebarResourcesItem from "./SidebarResourcesItem";
 import { FaBars } from "react-icons/fa6";
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import useMediaQuery from "./hooks/useMediaQuery";
 import { AppContext } from "../AppContext";
 

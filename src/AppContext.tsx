@@ -1,10 +1,17 @@
-//@ts-nocheck
-
 import { createContext, useState } from "react";
 
-export const AppContext = createContext();
+interface IAppContext {
+  sidebarIsOpened: boolean;
+  toggleSidebarIsOpened: () => void;
+}
 
-export const AppProvider = ({ children }) => {
+interface IAppProvider {
+	children: React.ReactNode;
+}
+
+export const AppContext = createContext<IAppContext>({} as IAppContext);
+
+export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
   const [sidebarIsOpened, setSidebarIsOpened] = useState(false);
   function toggleSidebarIsOpened() {
     setSidebarIsOpened(!sidebarIsOpened);
