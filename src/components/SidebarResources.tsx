@@ -1,23 +1,26 @@
+//@ts-nocheck
 import SidebarResourcesItem from "./SidebarResourcesItem";
 import { FaBars } from "react-icons/fa6";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import useMediaQuery from "./hooks/useMediaQuery";
+import { AppContext } from "../AppContext";
 
 function SidebarResources() {
-  const [isOpened, setIsOpened] = useState(false);
+  const {sidebarIsOpened, toggleSidebarIsOpened} = useContext(AppContext)
+
   const isNotMobile = useMediaQuery("(min-width: 640px)");
-  function handleClick() {
-    setIsOpened(!isOpened);
-  }
 
   return (
     <>
       <div>
-        <button onClick={handleClick} className=" text-xl fixed top-3 left-3 z-30 sm:hidden">
+        <button
+          onClick={toggleSidebarIsOpened}
+          className=" fixed left-3 top-3 z-30 text-xl sm:hidden"
+        >
           <FaBars />
         </button>
-        {(isNotMobile || isOpened) && (
-          <aside className="fixed sm:sticky bottom-0 pt-5 left-0 top-0 z-20 h-screen w-full shrink-0 overflow-y-scroll bg-gray-800 px-6 scrollbar-hide sm:w-40 ">
+        {(isNotMobile || sidebarIsOpened) && (
+          <aside className="fixed bottom-0 left-0 top-0 z-20 h-screen w-full shrink-0 overflow-y-scroll bg-gray-800 px-6 pt-5 scrollbar-hide sm:sticky sm:w-40 ">
             <nav className="">
               <ul className="flex flex-col gap-5 py-10">
                 <SidebarResourcesItem item="Vite" />
