@@ -16,7 +16,7 @@ function HowToItem({ data }: IProps) {
 
   return (
     <>
-      <div className="mb-6 border-2 p-2 sm:p-4 sm:pr-10">
+      <div className="mb-6 border-2 border-neutral-content p-2 sm:p-4 sm:pr-10">
         <button className="mb-5 flex items-center gap-2" onClick={handleClick}>
           {isOpened ? (
             <>

@@ -7,7 +7,7 @@ function Header() {
   const {isMobile, toggleSidebarIsOpened} = useContext(AppContext)
   return (
     <>
-    <menu className="flex items-center justify-between sm:justify-end py-2.5 w-full px-5 sticky top-0 bg-gray-700 z-10 mb-10 ">
+    <menu className="bg-base-100 flex items-center justify-between sm:justify-end py-2.5 w-full px-5 sticky top-0 z-10 mb-10 ">
     {isMobile && (
           <button onClick={toggleSidebarIsOpened} className="text-xl sm:hidden">
             <FaBars />

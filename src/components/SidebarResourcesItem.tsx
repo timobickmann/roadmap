@@ -13,35 +13,33 @@ function SidebarResourcesItem({ item }: IProps) {
 
   return (
     <>
-      <li>
-        <p>{item}</p>
+      <li className="flex flex-col mt-3">
+        <p className="pl-5 font-bold">Icon - {item}</p>
       
-          <ul>
-            <li>
-              <Link
+          
+            
+              <Link className="py-1 px-5 rounded hover:bg-neutral"
                 onClick={toggleSidebarIsOpened}
                 to={`/resources/${item.toLowerCase()}/setup`}
               >
                 Setup
               </Link>
-            </li>
-            <li>
-              <Link
+            
+              <Link className="py-1 px-5 rounded hover:bg-neutral"
                 onClick={toggleSidebarIsOpened}
                 to={`/resources/${item.toLowerCase()}`}
               >
                 Resources
               </Link>
-            </li>
-            <li>
-              <Link
+            
+              <Link className="py-1 px-5 rounded hover:bg-neutral"
                 onClick={toggleSidebarIsOpened}
                 to={`/resources/${item.toLowerCase()}/howtos`}
               >
                 How-Tos
               </Link>
-            </li>
-          </ul>
+            
+          
       </li>
     </>
   );

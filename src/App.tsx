@@ -23,7 +23,7 @@ function App() {
               <Route path="/resources/*" element={<SidebarResources />} />
             </Routes>
 
-            <div className="container mx-2 mb-5 w-full sm:mx-5 md:mx-10 lg:mx-20">
+            <div className=" mx-2 mb-5 w-full sm:mx-5 md:mx-10 lg:mx-20">
               <Header />
               <Routes>
                 <Route index element={<Home />} />
