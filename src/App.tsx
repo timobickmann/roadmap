@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { AppProvider } from "./AppContext";
 import Header from "./components/Header";
 import SidebarResources from "./components/SidebarResources";
 import Home from "./pages/Home";
-import Resources from "./pages/Resources";
 import Roadmap from "./pages/Roadmap";
 import ViteResources from "./pages/resources/ViteResources";
 import ViteSetup from "./pages/resources/ViteSetup";
@@ -11,7 +11,8 @@ import TailwindResources from "./pages/resources/TailwindResources";
 import TailwindSetup from "./pages/resources/TailwindSetup";
 import TailwindHowTos from "./pages/resources/TailwindHowTos";
 import DaisyuiSetup from "./pages/resources/DaisyuiSetup";
-import { AppProvider } from "./AppContext";
+import DaisyuiResources from "./pages/resources/DaisyuiResources";
+import DaisyuiHowTos from "./pages/resources/DaisyuiHowTos";
 
 function App() {
   return (
@@ -26,7 +27,6 @@ function App() {
               <Routes>
                 <Route index element={<Home />} />
                 <Route path="/roadmap" element={<Roadmap />} />
-                <Route path="/resources" element={<Resources />} />
                 <Route path="/resources/vite" element={<ViteResources />} />
                 <Route path="/resources/vite/setup" element={<ViteSetup />} />
                 <Route path="/resources/vite/howtos" element={<ViteHowTos />} />
@@ -43,8 +43,16 @@ function App() {
                   element={<TailwindHowTos />}
                 />
                 <Route
+                  path="/resources/daisyui"
+                  element={<DaisyuiResources />}
+                />
+                <Route
                   path="/resources/daisyui/setup"
                   element={<DaisyuiSetup />}
+                />
+                <Route
+                  path="/resources/daisyui/howtos"
+                  element={<DaisyuiHowTos />}
                 />
               </Routes>
             </div>

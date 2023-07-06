@@ -46,12 +46,12 @@ function Header() {
         </div>
 
         <ul className="flex gap-5">
-          <li>
+        <li>
             <details>
-              <summary className="cursor-pointer rounded  px-4 py-1 hover:bg-neutral hover:text-neutral-content">
+              <summary className="list-none cursor-pointer rounded  px-4 py-1 hover:bg-neutral hover:text-neutral-content">
                 Theme
               </summary>
-              <ul className="mt-2 flex gap-5 rounded bg-base-200 px-3 py-2">
+              <ul className="absolute right-5 mt-2 flex gap-5 rounded bg-base-200 px-3 py-2">
                 <li>
                   <ul className="flex flex-col gap-2">
                     <li className="border-b-2 border-b-base-content">Dark</li>

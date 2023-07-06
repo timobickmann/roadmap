@@ -53,14 +53,7 @@ function SidebarResources() {
                     Roadmap
                   </Link>
                 </li>
-                <li>
-                  <Link
-                    className="block rounded py-2 pl-4 hover:bg-neutral hover:text-neutral-content"
-                    to="/resources"
-                  >
-                    Resources
-                  </Link>
-                </li>
+                
                 <li className="mt-3 flex flex-col">
                   <p className="flex items-center gap-2 py-1 pl-4 font-bold">
                     <SiVite className="text-primary" /> Vite
