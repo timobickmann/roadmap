@@ -2,7 +2,7 @@ const plugin = require("tailwindcss/plugin");
 
 /** @type {import('tailwindcss').Config} */
 export default {
-  daisyui: {themes: ["dark", "business", "light"]},
+  daisyui: {themes: true},
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {},
