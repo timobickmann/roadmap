@@ -24,37 +24,42 @@ function App() {
 
             <div className=" mx-2 mb-5 w-full sm:mr-5 md:mr-8 lg:mr-10">
               <Header />
-              <Routes>
-                <Route index element={<Home />} />
-                <Route path="/roadmap" element={<Roadmap />} />
-                <Route path="/resources/vite" element={<ViteResources />} />
-                <Route path="/resources/vite/setup" element={<ViteSetup />} />
-                <Route path="/resources/vite/howtos" element={<ViteHowTos />} />
-                <Route
-                  path="/resources/tailwind"
-                  element={<TailwindResources />}
-                />
-                <Route
-                  path="/resources/tailwind/setup"
-                  element={<TailwindSetup />}
-                />
-                <Route
-                  path="/resources/tailwind/howtos"
-                  element={<TailwindHowTos />}
-                />
-                <Route
-                  path="/resources/daisyui"
-                  element={<DaisyuiResources />}
-                />
-                <Route
-                  path="/resources/daisyui/setup"
-                  element={<DaisyuiSetup />}
-                />
-                <Route
-                  path="/resources/daisyui/howtos"
-                  element={<DaisyuiHowTos />}
-                />
-              </Routes>
+              <main>
+                <Routes>
+                  <Route index element={<Home />} />
+                  <Route path="/roadmap" element={<Roadmap />} />
+                  <Route path="/resources/vite" element={<ViteResources />} />
+                  <Route path="/resources/vite/setup" element={<ViteSetup />} />
+                  <Route
+                    path="/resources/vite/howtos"
+                    element={<ViteHowTos />}
+                  />
+                  <Route
+                    path="/resources/tailwind"
+                    element={<TailwindResources />}
+                  />
+                  <Route
+                    path="/resources/tailwind/setup"
+                    element={<TailwindSetup />}
+                  />
+                  <Route
+                    path="/resources/tailwind/howtos"
+                    element={<TailwindHowTos />}
+                  />
+                  <Route
+                    path="/resources/daisyui"
+                    element={<DaisyuiResources />}
+                  />
+                  <Route
+                    path="/resources/daisyui/setup"
+                    element={<DaisyuiSetup />}
+                  />
+                  <Route
+                    path="/resources/daisyui/howtos"
+                    element={<DaisyuiHowTos />}
+                  />
+                </Routes>
+              </main>
             </div>
           </div>
         </Router>
