@@ -39,7 +39,7 @@ function SidebarResources() {
               <ul className="flex flex-col py-10">
                 <li>
                   <Link
-                    className="block rounded py-2 pl-4 hover:bg-neutral"
+                    className="block rounded py-2 pl-4 hover:bg-neutral hover:text-neutral-content"
                     to="/"
                   >
                     Home
@@ -47,7 +47,7 @@ function SidebarResources() {
                 </li>
                 <li>
                   <Link
-                    className="block rounded py-2 pl-4 hover:bg-neutral"
+                    className="block rounded py-2 pl-4 hover:bg-neutral hover:text-neutral-content"
                     to="/roadmap"
                   >
                     Roadmap
@@ -55,7 +55,7 @@ function SidebarResources() {
                 </li>
                 <li>
                   <Link
-                    className="block rounded py-2 pl-4 hover:bg-neutral"
+                    className="block rounded py-2 pl-4 hover:bg-neutral hover:text-neutral-content"
                     to="/resources"
                   >
                     Resources
