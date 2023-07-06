@@ -49,11 +49,7 @@ function Header() {
             <details>
               <summary>Theme</summary>
               <ul className="bg-base-100 p-2">
-                <li>
-                  <button onClick={() => handleThemeClick("light")}>
-                    Light - Achtung sehr hell :D
-                  </button>
-                </li>
+                <li className="border-b-2 border-b-base-content">Dark</li>
                 <li>
                   <button onClick={() => handleThemeClick("dark")}>Dark</button>
                 </li>
@@ -61,6 +57,69 @@ function Header() {
                   <button onClick={() => handleThemeClick("business")}>
                     Business
                   </button>
+                </li>
+                <li>
+                  <button onClick={() => handleThemeClick("synthwave")}>
+                    Synthwave
+                  </button>
+                </li>
+
+                <li>
+                  <button onClick={() => handleThemeClick("halloween")}>
+                    Hallowen
+                  </button>
+                </li>
+
+                <li>
+                  <button onClick={() => handleThemeClick("forest")}>
+                    Forest
+                  </button>
+                </li>
+
+                <li>
+                  <button onClick={() => handleThemeClick("dracula")}>
+                    Dracula
+                  </button>
+                </li>
+
+                <li>
+                  <button onClick={() => handleThemeClick("night")}>
+                    Night
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => handleThemeClick("coffee")}>
+                    Coffee
+                  </button>
+                </li>
+                <li className="border-b-2 border-b-base-content mt-2">Light</li>
+                <li>
+                  <button onClick={() => handleThemeClick("autumn")}>
+                    Autumn
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => handleThemeClick("wireframe")}>
+                    Wireframe
+                  </button>
+                </li>
+                <li>
+                  <button onClick={() => handleThemeClick("lofi")}>Lofi</button>
+                </li>
+                <li>
+                  <button onClick={() => handleThemeClick("garden")}>
+                    Garden
+                  </button>
+                  <li>
+                    <button onClick={() => handleThemeClick("retro")}>
+                      Retro
+                    </button>
+                  </li>
+                  <li>
+                    <button onClick={() => handleThemeClick("cupcake")}>
+                      Cupcake
+                    </button>
+                  </li>
                 </li>
               </ul>
             </details>
