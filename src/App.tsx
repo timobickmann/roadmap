@@ -10,19 +10,18 @@ import ViteHowTos from "./pages/resources/ViteHowTos";
 import TailwindResources from "./pages/resources/TailwindResources";
 import TailwindSetup from "./pages/resources/TailwindSetup";
 import TailwindHowTos from "./pages/resources/TailwindHowTos";
+import DaisyuiSetup from "./pages/resources/DaisyuiSetup";
 import { AppProvider } from "./AppContext";
 
 function App() {
   return (
     <>
       <AppProvider>
-        <div className="flex">
-          <Router>
-            <Routes>
-              <Route path="/resources/*" element={<SidebarResources />} />
-            </Routes>
+        <Router>
+          <div className="flex min-h-screen">
+            <SidebarResources />
 
-            <div className="container mx-2 mb-5 w-full sm:mx-5 md:mx-10 lg:mx-20">
+            <div className=" mx-2 mb-5 w-full sm:mx-5 md:mx-10 lg:mx-20">
               <Header />
               <Routes>
                 <Route index element={<Home />} />
@@ -43,10 +42,14 @@ function App() {
                   path="/resources/tailwind/howtos"
                   element={<TailwindHowTos />}
                 />
+                <Route
+                  path="/resources/daisyui/setup"
+                  element={<DaisyuiSetup />}
+                />
               </Routes>
             </div>
-          </Router>
-        </div>
+          </div>
+        </Router>
       </AppProvider>
     </>
   );

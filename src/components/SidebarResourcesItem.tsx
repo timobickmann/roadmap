@@ -1,58 +1,39 @@
 import { Link } from "react-router-dom";
-import { useState, useContext } from "react";
-import { FaCaretDown } from "react-icons/fa6";
-import { FaCaretUp } from "react-icons/fa6";
+import { useContext } from "react";
 import { AppContext } from "../AppContext";
 
 interface IProps {
-  item: string;
+  sidebarItem: string;
 }
 
-function SidebarResourcesItem({ item }: IProps) {
+function SidebarResourcesItem({ sidebarItem }: IProps) {
   const { toggleSidebarIsOpened } = useContext(AppContext);
-
-  const [isOpen, setIsOpen] = useState(false);
-
-  function handleClick() {
-    setIsOpen(!isOpen);
-  }
 
   return (
     <>
-      <li>
-        <button className="flex items-center gap-2" onClick={handleClick}>
-          {item} {isOpen ? <FaCaretUp /> : <FaCaretDown />}
-        </button>
+      <Link
+        className="rounded px-5 py-1 hover:bg-neutral"
+        onClick={toggleSidebarIsOpened}
+        to={`/resources/${sidebarItem}/setup`}
+      >
+        Setup
+      </Link>
 
-        {isOpen && (
-          <ul>
-            <li>
-              <Link
-                onClick={toggleSidebarIsOpened}
-                to={`/resources/${item.toLowerCase()}/setup`}
-              >
-                Setup
-              </Link>
-            </li>
-            <li>
-              <Link
-                onClick={toggleSidebarIsOpened}
-                to={`/resources/${item.toLowerCase()}`}
-              >
-                Resources
-              </Link>
-            </li>
-            <li>
-              <Link
-                onClick={toggleSidebarIsOpened}
-                to={`/resources/${item.toLowerCase()}/howtos`}
-              >
-                How-Tos
-              </Link>
-            </li>
-          </ul>
-        )}
-      </li>
+      <Link
+        className="rounded px-5 py-1 hover:bg-neutral"
+        onClick={toggleSidebarIsOpened}
+        to={`/resources/${sidebarItem}`}
+      >
+        Resources
+      </Link>
+
+      <Link
+        className="rounded px-5 py-1 hover:bg-neutral"
+        onClick={toggleSidebarIsOpened}
+        to={`/resources/${sidebarItem}/howtos`}
+      >
+        How-Tos
+      </Link>
     </>
   );
 }

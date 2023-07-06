@@ -1,8 +1,10 @@
 import { createContext, useState } from "react";
+import useMediaQuery from "./components/hooks/useMediaQuery";
 
 interface IAppContext {
   sidebarIsOpened: boolean;
   toggleSidebarIsOpened: () => void;
+  isMobile: boolean;
 }
 
 interface IAppProvider {
@@ -17,8 +19,10 @@ export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
     setSidebarIsOpened(!sidebarIsOpened);
   }
 
+  const isMobile = useMediaQuery("(max-width: 640px)");
+
   return (
-    <AppContext.Provider value={{ sidebarIsOpened, toggleSidebarIsOpened }}>
+    <AppContext.Provider value={{ sidebarIsOpened, toggleSidebarIsOpened, isMobile }}>
       {children}
     </AppContext.Provider>
   );

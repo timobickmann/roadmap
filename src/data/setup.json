@@ -61,7 +61,6 @@
   },
   {
     "category": "vite",
-
     "step": "Step 1 - Node.js installed?",
     "description": "Vite requires Node.js version 14.18+, 16+. However, some templates require a higher Node.js version to work, please upgrade if your package manager warns about it.",
     "link": "https://nodejs.org/en",
@@ -72,7 +71,6 @@
   },
   {
     "category": "vite",
-
     "step": "Step 2 - Create Vite App",
     "description": "",
     "link": "",
@@ -83,7 +81,6 @@
   },
   {
     "category": "vite",
-
     "step": "",
     "description": "",
     "link": "",
@@ -94,7 +91,6 @@
   },
   {
     "category": "vite",
-
     "step": "",
     "description": "",
     "link": "",
@@ -105,7 +101,6 @@
   },
   {
     "category": "vite",
-
     "step": "Optional - Use Template",
     "description": "Choose a community template to start your project",
     "link": "https://github.com/vitejs/awesome-vite#templates",
@@ -116,7 +111,6 @@
   },
   {
     "category": "vite",
-
     "step": "Step 3 - Follow Prompts",
     "description": "Type a name for your project\nSelect the framework you wanna use for your project\nChoose TypeScript or JavaScript (Ignore SWC for now)",
     "link": "",
@@ -127,7 +121,6 @@
   },
   {
     "category": "vite",
-
     "step": "Step 4 - Install Dependencies and Start Server",
     "description": "",
     "link": "",
@@ -135,5 +128,25 @@
     "language": "bash",
     "file": "",
     "code": "cd [your-projectname]\nnpm i\nnpm run dev\ncode ."
+  },
+  {
+    "category": "daisyui",
+    "step": "Step 1 - Install daisyUI",
+    "description": "",
+    "link": "",
+    "linktext": "",
+    "language": "bash",
+    "file": "",
+    "code": "npm i -D daisyui@latest"
+  },
+  {
+    "category": "daisyui",
+    "step": "Step 2 - Add daisyUI to your tailwind.config",
+    "description": "",
+    "link": "",
+    "linktext": "",
+    "language": "js",
+    "file": "tailwind.config.js",
+    "code": "module.exports = {\n  \/\/...\n  plugins: [require(\"daisyui\")],\n}"
   }
 ]
