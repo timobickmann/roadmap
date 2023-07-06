@@ -1,7 +1,7 @@
 import { AppContext } from "../AppContext";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { SiTailwindcss, SiVite, SiDaisyui } from "react-icons/si";
+import { SiTailwindcss, SiVite, SiDaisyui} from "react-icons/si";
 import SidebarResourcesItem from "./SidebarResourcesItem";
 
 function SidebarResources() {

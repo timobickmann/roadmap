@@ -1,6 +1,7 @@
 import { AppContext } from "../AppContext";
 import { useContext } from "react";
 import { FaBars } from "react-icons/fa6";
+import { SiGithub } from "react-icons/si";
 
 function Header() {
   const { isMobile, toggleSidebarIsOpened } = useContext(AppContext);
@@ -12,7 +13,7 @@ function Header() {
 
   return (
     <>
-      <menu className="sticky top-0 z-10 mb-10 flex w-full items-start justify-between bg-base-100 px-5 py-2.5 sm:justify-end ">
+      <menu className="sticky top-0 z-10 mb-10 flex w-full items-center justify-between bg-base-100 px-5 py-2.5 sm:justify-end ">
         <div className="flex items-center gap-5">
           {isMobile && (
             <>
@@ -47,82 +48,157 @@ function Header() {
         <ul className="flex gap-5">
           <li>
             <details>
-              <summary>Theme</summary>
-              <ul className="bg-base-100 p-2">
-                <li className="border-b-2 border-b-base-content">Dark</li>
+              <summary className="cursor-pointer rounded  px-4 py-1 hover:bg-neutral hover:text-neutral-content">
+                Theme
+              </summary>
+              <ul className="mt-2 flex gap-5 rounded bg-base-200 px-3 py-2">
                 <li>
-                  <button onClick={() => handleThemeClick("dark")}>Dark</button>
+                  <ul className="flex flex-col gap-2">
+                    <li className="border-b-2 border-b-base-content">Dark</li>
+                    <li>
+                      <button
+                        data-theme="dark"
+                        className="w-full rounded px-5 py-2 text-left hover:bg-neutral hover:text-neutral-content"
+                        onClick={() => handleThemeClick("dark")}
+                      >
+                        Dark
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        data-theme="business"
+                        className="w-full rounded px-5 py-2 text-left hover:bg-neutral hover:text-neutral-content"
+                        onClick={() => handleThemeClick("business")}
+                      >
+                        Business
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        data-theme="synthwave"
+                        className="w-full rounded px-5 py-2 text-left hover:bg-neutral hover:text-neutral-content"
+                        onClick={() => handleThemeClick("synthwave")}
+                      >
+                        Synthwave
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        data-theme="halloween"
+                        className="w-full rounded px-5 py-2 text-left hover:bg-neutral hover:text-neutral-content"
+                        onClick={() => handleThemeClick("halloween")}
+                      >
+                        Hallowen
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        data-theme="forest"
+                        className="w-full rounded px-5 py-2 text-left hover:bg-neutral hover:text-neutral-content"
+                        onClick={() => handleThemeClick("forest")}
+                      >
+                        Forest
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        data-theme="dracula"
+                        className="w-full rounded px-5 py-2 text-left hover:bg-neutral hover:text-neutral-content"
+                        onClick={() => handleThemeClick("dracula")}
+                      >
+                        Dracula
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        data-theme="night"
+                        className="w-full rounded px-5 py-2 text-left hover:bg-neutral hover:text-neutral-content"
+                        onClick={() => handleThemeClick("night")}
+                      >
+                        Night
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        data-theme="coffee"
+                        className="w-full rounded px-5 py-2 text-left hover:bg-neutral hover:text-neutral-content"
+                        onClick={() => handleThemeClick("coffee")}
+                      >
+                        Coffee
+                      </button>
+                    </li>
+                  </ul>
                 </li>
                 <li>
-                  <button onClick={() => handleThemeClick("business")}>
-                    Business
-                  </button>
-                </li>
-                <li>
-                  <button onClick={() => handleThemeClick("synthwave")}>
-                    Synthwave
-                  </button>
-                </li>
-
-                <li>
-                  <button onClick={() => handleThemeClick("halloween")}>
-                    Hallowen
-                  </button>
-                </li>
-
-                <li>
-                  <button onClick={() => handleThemeClick("forest")}>
-                    Forest
-                  </button>
-                </li>
-
-                <li>
-                  <button onClick={() => handleThemeClick("dracula")}>
-                    Dracula
-                  </button>
-                </li>
-
-                <li>
-                  <button onClick={() => handleThemeClick("night")}>
-                    Night
-                  </button>
-                </li>
-                <li>
-                  <button onClick={() => handleThemeClick("coffee")}>
-                    Coffee
-                  </button>
-                </li>
-                <li className="border-b-2 border-b-base-content mt-2">Light</li>
-                <li>
-                  <button onClick={() => handleThemeClick("autumn")}>
-                    Autumn
-                  </button>
-                </li>
-                <li>
-                  <button onClick={() => handleThemeClick("wireframe")}>
-                    Wireframe
-                  </button>
-                </li>
-                <li>
-                  <button onClick={() => handleThemeClick("lofi")}>Lofi</button>
-                </li>
-                <li>
-                  <button onClick={() => handleThemeClick("garden")}>
-                    Garden
-                  </button>
-                  <li>
-                    <button onClick={() => handleThemeClick("retro")}>
-                      Retro
-                    </button>
-                  </li>
-                  <li>
-                    <button onClick={() => handleThemeClick("cupcake")}>
-                      Cupcake
-                    </button>
-                  </li>
+                  <ul className="flex flex-col gap-2">
+                    <li className="border-b-2 border-b-base-content">Light</li>
+                    <li>
+                      <button
+                        data-theme="autumn"
+                        className="w-full rounded px-5 py-2 text-left hover:bg-neutral hover:text-neutral-content"
+                        onClick={() => handleThemeClick("autumn")}
+                      >
+                        Autumn
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        data-theme="wireframe"
+                        className="w-full rounded px-5 py-2 text-left hover:bg-neutral hover:text-neutral-content"
+                        onClick={() => handleThemeClick("wireframe")}
+                      >
+                        Wireframe
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        data-theme="lofi"
+                        className="w-full rounded px-5 py-2 text-left hover:bg-neutral hover:text-neutral-content"
+                        onClick={() => handleThemeClick("lofi")}
+                      >
+                        Lofi
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        data-theme="garden"
+                        className="w-full rounded px-5 py-2 text-left hover:bg-neutral hover:text-neutral-content"
+                        onClick={() => handleThemeClick("garden")}
+                      >
+                        Garden
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        data-theme="retro"
+                        className="w-full rounded px-5 py-2 text-left hover:bg-neutral hover:text-neutral-content"
+                        onClick={() => handleThemeClick("retro")}
+                      >
+                        Retro
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        data-theme="cupcake"
+                        className="w-full rounded px-5 py-2 text-left hover:bg-neutral hover:text-neutral-content"
+                        onClick={() => handleThemeClick("cupcake")}
+                      >
+                        Cupcake
+                      </button>
+                    </li>
+                  </ul>
                 </li>
               </ul>
             </details>
+          </li>
+          <li className="flex items-center">
+            <a
+              className="hover:text-primary-focus"
+              target="_blank"
+              href="https://github.com/timobickmann/roadmap"
+            >
+              <SiGithub />
+            </a>
           </li>
         </ul>
       </menu>
