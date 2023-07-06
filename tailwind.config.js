@@ -11,7 +11,9 @@ export default {
   [ require("@tailwindcss/typography"), require("daisyui"),
     plugin(function ({ addBase, addUtilities, theme }) {
       addBase({
-        
+        "main a": {color: "hsl(var(--p))"},
+        "main a:hover": {color: "hsl(var(--pf))"}
+       
       }),
         addUtilities({
           ".scrollbar-hide": {
