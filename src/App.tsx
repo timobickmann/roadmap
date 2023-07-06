@@ -18,7 +18,7 @@ function App() {
     <>
       <AppProvider>
         <Router>
-          <div className="flex">
+          <div className="flex min-h-screen">
             <Routes>
               <Route path="/resources/*" element={<SidebarResources />} />
             </Routes>
