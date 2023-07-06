@@ -10,8 +10,8 @@ function CodeBlock({ code, file }: IProps) {
   return (
     <>
       <pre>
-        <div className="mt-4 w-min rounded-md bg-black pb-1 font-sans">
-          <div className="flex items-center justify-between rounded-t-md bg-gray-800 px-4 py-2 text-xs">
+        <div className="mt-4 w-min rounded-md bg-neutral pb-1 text-neutral-content ">
+          <div className="flex items-center justify-between rounded-t-md px-4 py-2 text-xs border-b-2 border-b-base-100">
             <div>{file}</div>
             <button
               onClick={() => {
