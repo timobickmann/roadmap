@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
-import { useState, useContext } from "react";
-import { FaCaretDown } from "react-icons/fa6";
-import { FaCaretUp } from "react-icons/fa6";
+import { useContext } from "react";
 import { AppContext } from "../AppContext";
 
 interface IProps {
@@ -11,20 +9,13 @@ interface IProps {
 function SidebarResourcesItem({ item }: IProps) {
   const { toggleSidebarIsOpened } = useContext(AppContext);
 
-  const [isOpen, setIsOpen] = useState(false);
-
-  function handleClick() {
-    setIsOpen(!isOpen);
-  }
+ 
 
   return (
     <>
       <li>
-        <button className="flex items-center gap-2" onClick={handleClick}>
-          {item} {isOpen ? <FaCaretUp /> : <FaCaretDown />}
-        </button>
-
-        {isOpen && (
+        <p>{item}</p>
+      
           <ul>
             <li>
               <Link
@@ -51,7 +42,6 @@ function SidebarResourcesItem({ item }: IProps) {
               </Link>
             </li>
           </ul>
-        )}
       </li>
     </>
   );
