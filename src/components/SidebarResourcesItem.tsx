@@ -12,7 +12,7 @@ function SidebarResourcesItem({ sidebarItem }: IProps) {
   return (
     <>
       <Link
-        className="rounded px-5 py-1 hover:bg-neutral"
+        className="rounded px-4 py-1 hover:bg-neutral"
         onClick={toggleSidebarIsOpened}
         to={`/resources/${sidebarItem}/setup`}
       >
@@ -20,7 +20,7 @@ function SidebarResourcesItem({ sidebarItem }: IProps) {
       </Link>
 
       <Link
-        className="rounded px-5 py-1 hover:bg-neutral"
+        className="rounded px-4 py-1 hover:bg-neutral"
         onClick={toggleSidebarIsOpened}
         to={`/resources/${sidebarItem}`}
       >
@@ -28,7 +28,7 @@ function SidebarResourcesItem({ sidebarItem }: IProps) {
       </Link>
 
       <Link
-        className="rounded px-5 py-1 hover:bg-neutral"
+        className="rounded px-4 py-1 hover:bg-neutral"
         onClick={toggleSidebarIsOpened}
         to={`/resources/${sidebarItem}/howtos`}
       >
