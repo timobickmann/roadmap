@@ -51,7 +51,7 @@ function Header() {
               <ul className="bg-base-100 p-2">
                 <li>
                   <button onClick={() => handleThemeClick("light")}>
-                    Light
+                    Light - Achtung sehr hell :D
                   </button>
                 </li>
                 <li>
