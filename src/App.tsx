@@ -21,7 +21,7 @@ function App() {
           <div className="flex min-h-screen">
             <SidebarResources />
 
-            <div className=" mx-2 mb-5 w-full sm:mx-5 md:mx-10 lg:mx-20">
+            <div className=" mx-2 mb-5 w-full sm:mr-5 md:mr-8 lg:mr-10">
               <Header />
               <Routes>
                 <Route index element={<Home />} />
