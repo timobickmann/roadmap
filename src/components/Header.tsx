@@ -13,6 +13,7 @@ function Header() {
             <FaBars />
           </button>
         )}
+        
       <nav>
         <ul className="flex gap-5">
         <li>
