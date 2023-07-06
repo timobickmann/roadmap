@@ -1,8 +1,8 @@
 import { AppContext } from "../AppContext";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import {SiTailwindcss, SiVite, SiDaisyui} from "react-icons/si"
-
+import { SiTailwindcss, SiVite, SiDaisyui } from "react-icons/si";
+import SidebarResourcesItem from "./SidebarResourcesItem";
 
 function SidebarResources() {
   const { sidebarIsOpened, toggleSidebarIsOpened, isMobile } =
@@ -17,7 +17,7 @@ function SidebarResources() {
               <ul className="flex flex-col py-20">
                 <li>
                   <Link
-                    className="block rounded pl-4 py-2 hover:bg-neutral"
+                    className="block rounded py-2 pl-4 hover:bg-neutral"
                     to="/"
                   >
                     Home
@@ -25,7 +25,7 @@ function SidebarResources() {
                 </li>
                 <li>
                   <Link
-                    className="block rounded pl-4 py-2 hover:bg-neutral"
+                    className="block rounded py-2 pl-4 hover:bg-neutral"
                     to="/roadmap"
                   >
                     Roadmap
@@ -33,92 +33,29 @@ function SidebarResources() {
                 </li>
                 <li>
                   <Link
-                    className="block rounded pl-4 py-2 hover:bg-neutral"
+                    className="block rounded py-2 pl-4 hover:bg-neutral"
                     to="/resources"
                   >
                     Resources
                   </Link>
                 </li>
                 <li className="mt-3 flex flex-col">
-                  <p className="pl-4 py-1 font-bold flex items-center gap-2"><SiVite className="text-primary"/> Vite</p>
-
-                  <Link
-                    className="rounded pl-4 py-2 hover:bg-neutral"
-                    onClick={toggleSidebarIsOpened}
-                    to={"/resources/vite/setup"}
-                  >
-                    Setup
-                  </Link>
-
-                  <Link
-                    className="rounded pl-4 py-2 hover:bg-neutral"
-                    onClick={toggleSidebarIsOpened}
-                    to={"/resources/vite"}
-                  >
-                    Resources
-                  </Link>
-
-                  <Link
-                    className="rounded pl-4 py-2 hover:bg-neutral"
-                    onClick={toggleSidebarIsOpened}
-                    to={"/resources/vite/howtos"}
-                  >
-                    How-Tos
-                  </Link>
+                  <p className="flex items-center gap-2 py-1 pl-4 font-bold">
+                    <SiVite className="text-primary" /> Vite
+                  </p>
+                  <SidebarResourcesItem sidebarItem={"vite"} />
                 </li>
                 <li className="mt-3 flex flex-col">
-                  <p className="pl-4 py-1 font-bold flex items-center gap-2"><SiTailwindcss className="text-secondary"/> Tailwind</p>
-
-                  <Link
-                    className="rounded pl-4 py-2 hover:bg-neutral"
-                    onClick={toggleSidebarIsOpened}
-                    to={"/resources/tailwind/setup"}
-                  >
-                    Setup
-                  </Link>
-
-                  <Link
-                    className="rounded pl-4 py-2 hover:bg-neutral"
-                    onClick={toggleSidebarIsOpened}
-                    to={"/resources/tailwind"}
-                  >
-                    Resources
-                  </Link>
-
-                  <Link
-                    className="rounded pl-4 py-2 hover:bg-neutral"
-                    onClick={toggleSidebarIsOpened}
-                    to={"/resources/tailwind/howtos"}
-                  >
-                    How-Tos
-                  </Link>
+                  <p className="flex items-center gap-2 py-1 pl-4 font-bold">
+                    <SiTailwindcss className="text-secondary" /> Tailwind
+                  </p>
+                  <SidebarResourcesItem sidebarItem={"tailwind"} />
                 </li>
                 <li className="mt-3 flex flex-col">
-                  <p className="pl-4 py-1 font-bold flex items-center gap-2"><SiDaisyui className="text-accent"/> daisyUI</p>
-
-                  <Link
-                    className="rounded pl-4 py-2 hover:bg-neutral"
-                    onClick={toggleSidebarIsOpened}
-                    to={"/resources/daisyui/setup"}
-                  >
-                    Setup
-                  </Link>
-
-                  <Link
-                    className="rounded pl-4 py-2 hover:bg-neutral"
-                    onClick={toggleSidebarIsOpened}
-                    to={"/resources/daisyui"}
-                  >
-                    Resources
-                  </Link>
-
-                  <Link
-                    className="rounded pl-4 py-2 hover:bg-neutral"
-                    onClick={toggleSidebarIsOpened}
-                    to={"/resources/daisyui/howtos"}
-                  >
-                    How-Tos
-                  </Link>
+                  <p className="flex items-center gap-2 py-1 pl-4 font-bold">
+                    <SiDaisyui className="text-accent" /> daisyUI
+                  </p>
+                  <SidebarResourcesItem sidebarItem={"daisyui"} />
                 </li>
               </ul>
             </nav>

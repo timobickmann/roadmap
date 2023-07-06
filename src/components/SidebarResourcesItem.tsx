@@ -3,44 +3,37 @@ import { useContext } from "react";
 import { AppContext } from "../AppContext";
 
 interface IProps {
-  item: string;
+  sidebarItem: string;
 }
 
-function SidebarResourcesItem({ item }: IProps) {
+function SidebarResourcesItem({ sidebarItem }: IProps) {
   const { toggleSidebarIsOpened } = useContext(AppContext);
-
- 
 
   return (
     <>
-      <li className="flex flex-col mt-3">
-        <p className="pl-5 font-bold">Icon - {item}</p>
-      
-          
-            
-              <Link className="py-1 px-5 rounded hover:bg-neutral"
-                onClick={toggleSidebarIsOpened}
-                to={`/resources/${item.toLowerCase()}/setup`}
-              >
-                Setup
-              </Link>
-            
-              <Link className="py-1 px-5 rounded hover:bg-neutral"
-                onClick={toggleSidebarIsOpened}
-                to={`/resources/${item.toLowerCase()}`}
-              >
-                Resources
-              </Link>
-            
-              <Link className="py-1 px-5 rounded hover:bg-neutral"
-                onClick={toggleSidebarIsOpened}
-                to={`/resources/${item.toLowerCase()}/howtos`}
-              >
-                How-Tos
-              </Link>
-            
-          
-      </li>
+      <Link
+        className="rounded px-5 py-1 hover:bg-neutral"
+        onClick={toggleSidebarIsOpened}
+        to={`/resources/${sidebarItem}/setup`}
+      >
+        Setup
+      </Link>
+
+      <Link
+        className="rounded px-5 py-1 hover:bg-neutral"
+        onClick={toggleSidebarIsOpened}
+        to={`/resources/${sidebarItem}`}
+      >
+        Resources
+      </Link>
+
+      <Link
+        className="rounded px-5 py-1 hover:bg-neutral"
+        onClick={toggleSidebarIsOpened}
+        to={`/resources/${sidebarItem}/howtos`}
+      >
+        How-Tos
+      </Link>
     </>
   );
 }
