@@ -24,8 +24,8 @@ function Header() {
   }, []);
 
   function handleThemeClick(theme: string) {
-    const bodyTag = document.getElementsByTagName("body")[0];
-    bodyTag.setAttribute("data-theme", theme);
+    const bodyTag = document.querySelector("body");
+    bodyTag?.setAttribute("data-theme", theme);
   }
 
   return (
