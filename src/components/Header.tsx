@@ -1,10 +1,27 @@
 import { AppContext } from "../AppContext";
-import { useContext } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { FaBars } from "react-icons/fa6";
 import { SiGithub } from "react-icons/si";
 
 function Header() {
   const { isMobile, toggleSidebarIsOpened } = useContext(AppContext);
+  const detailsRef = useRef<HTMLDetailsElement>(null)
+
+  useEffect(() => {
+    function handleClickOutsideTheme(event: MouseEvent) {
+      if (
+        detailsRef.current &&
+        !detailsRef.current.contains(event.target as Node)
+      ) {
+        detailsRef.current.removeAttribute("open")      }
+    }
+
+    document.addEventListener("click", handleClickOutsideTheme);
+
+    return () => {
+      document.removeEventListener("click", handleClickOutsideTheme);
+    };
+  }, []);
 
   function handleThemeClick(theme: string) {
     const bodyTag = document.getElementsByTagName("body")[0];
@@ -47,7 +64,7 @@ function Header() {
 
         <ul className="flex gap-5">
         <li>
-            <details>
+            <details ref={detailsRef}>
               <summary className="list-none cursor-pointer rounded  px-4 py-1 hover:bg-neutral hover:text-neutral-content">
                 Theme
               </summary>
