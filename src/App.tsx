@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { AppProvider } from "./AppContext";
+import { useContext } from "react";
+import { AppProvider, AppContext } from "./AppContext";
 import Header from "./components/Header";
 import SidebarResources from "./components/SidebarResources";
 import Home from "./pages/Home";
@@ -15,11 +16,13 @@ import DaisyuiResources from "./pages/resources/DaisyuiResources";
 import DaisyuiHowTos from "./pages/resources/DaisyuiHowTos";
 
 function App() {
+  const {theme} = useContext(AppContext)
   return (
     <>
       <AppProvider>
         <Router>
-          <div className="flex min-h-screen">
+        {/* <div className="flex min-h-screen" data-theme="light"> ------- Dieser Code funktioniert*/}
+          <div className="flex min-h-screen" data-theme={theme}>
             <SidebarResources />
 
             <div className=" mx-2 mb-5 w-full sm:mr-5 md:mr-8 lg:mr-10">
