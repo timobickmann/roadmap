@@ -1,44 +1,46 @@
-import { Link } from "react-router-dom";
-import CodeBlock from "./CodeBlock";
-import data from "../data/setup.json";
+//@ts-nocheck
+import setupData from "../data/setup.json";
+import { ReactMarkdown } from "react-markdown/lib/react-markdown";
+import style from "./markdownStyles.module.css";
+import {Prism as SyntaxHighlighter} from "react-syntax-highlighter"
+import {oneDark} from "react-syntax-highlighter/dist/esm/styles/prism"
+
 
 interface IProps {
   category: string;
 }
 
 function SetupStep({ category }: IProps) {
-  const findData = data.filter((item) => item.category === category);
+  const setupMarkdown = setupData.filter((item) => item.category === category);
   return (
     <>
-      {findData.map((element) => {
+      {setupMarkdown.map((element) => {
         return (
           <>
-            <div className="mb-5 flex flex-col gap-1 text-center sm:text-left">
-              <h2 className="mb-3 text-center text-2xl sm:text-left">
-                {element.step}
-              </h2>
-              {element.description !== "" && (
-                <p className="whitespace-pre-wrap">{element.description}</p>
-              )}
-              {element.link !== "" && (
-                <Link
-                  to={element.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {element.linktext}
-                </Link>
-              )}
-              {element.code !== "" && (
-                <div className="mx-auto sm:mx-0">
-                  <CodeBlock
-                    file={element.file}
-                    language={element.language}
-                    code={element.code}
-                  />
-                </div>
-              )}
-            </div>
+            {element.md && (<>
+              <ReactMarkdown
+                linkTarget={"_blank"}
+                className={style.reactMarkdown}
+                children={element.md}
+                components={{
+                  code({node, inline, className, children, ...props}) {
+                    const match = /language-(\w+)/.exec(className || '')
+                    return !inline && match ? (
+                      <SyntaxHighlighter
+                        {...props}
+                        children={String(children).replace(/\n$/, '')}
+                        style={oneDark}
+                        language={match[1]}
+                      />
+                    ) : (
+                      <code {...props} className={className}>
+                        {children}
+                      </code>
+                    )
+                  }
+                }}
+              /></>
+            )}
           </>
         );
       })}

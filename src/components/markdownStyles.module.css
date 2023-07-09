@@ -1,0 +1,24 @@
+.reactMarkdown {
+  @apply m-5 flex flex-col items-center gap-1 text-center sm:items-start sm:text-left md:pr-2 lg:pr-96;
+}
+
+.reactMarkdown h1 {
+  @apply text-3xl;
+}
+
+.reactMarkdown h2 {
+  @apply mb-2 mt-5 text-2xl;
+}
+
+.reactMarkdown h3 {
+  @apply mb-1 text-xl;
+}
+
+.reactMarkdown pre {
+  @apply !my-0 w-[85vw] overflow-y-auto rounded-md !border-0 !bg-neutral p-2 text-left text-sm !shadow-none sm:w-96 md:w-[28rem] lg:w-min lg:min-w-[28rem];
+}
+
+.reactMarkdown code {
+  @apply !bg-neutral !text-neutral-content; 
+  text-shadow: none !important;
+}

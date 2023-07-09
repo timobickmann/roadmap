@@ -1,24 +1,27 @@
-import { Link } from "react-router-dom";
-import data from "../data/resources.json";
+import style from "./markdownStyles.module.css";
+import resourcesData from "../data/resources.json";
+import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
 interface IProps {
   category: string;
 }
 
 function Resource({ category }: IProps) {
-  const findData = data.filter((item) => item.category === category);
+  const setupMarkdown = resourcesData.filter(
+    (item) => item.category === category
+  );
   return (
     <>
-      {findData.map((element) => {
+      {setupMarkdown.map((element) => {
         return (
           <>
-            <div className="mb-6 flex flex-col gap-1">
-              <h2>{element.title}</h2>
-              {element.description !== "" && <p>{element.description}</p>}
-              <Link to={element.link} target="_blank" rel="noopener noreferrer">
-                {element.linktext}
-              </Link>
-            </div>
+            {element.md && (
+              <ReactMarkdown
+                linkTarget={"_blank"}
+                className={style.reactMarkdown}
+                children={element.md}
+              />
+            )}
           </>
         );
       })}
