@@ -1,5 +1,5 @@
 .reactMarkdown {
-  @apply md:pr-96 m-5 flex flex-col items-center gap-1 text-center sm:items-start sm:text-left;
+  @apply md:pr-2 lg:pr-96 m-5 flex flex-col items-center gap-1 text-center sm:items-start sm:text-left;
 }
 
 .reactMarkdown h1 {
