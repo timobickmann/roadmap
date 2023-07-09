@@ -1,5 +1,5 @@
 .reactMarkdown {
-  @apply md:pr-2 lg:pr-96 m-5 flex flex-col items-center gap-1 text-center sm:items-start sm:text-left;
+  @apply md:pr-2 lg:pr-96 m-5 flex flex-col items-center gap-1 text-center sm:items-start sm:text-left ;
 }
 
 .reactMarkdown h1 {
@@ -15,5 +15,9 @@
 }
 
 .reactMarkdown pre {
-  @apply mt-3 w-[85vw] overflow-y-auto rounded-md bg-neutral p-2 text-left text-sm text-neutral-content sm:w-96 md:w-[28rem] lg:w-min lg:min-w-[28rem];
+  @apply mt-3 w-[85vw] overflow-y-auto rounded-md !bg-neutral p-2 text-left text-sm !text-neutral-content sm:w-96 md:w-[28rem] lg:w-min lg:min-w-[28rem];
+}
+
+.reactMarkdown code {
+@apply !bg-neutral !text-neutral-content
 }
