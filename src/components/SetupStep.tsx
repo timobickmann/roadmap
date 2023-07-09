@@ -1,6 +1,6 @@
 import setupData from "../data/setup.json";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
-import style from "./markdownStyles.module.css"
+import style from "./markdownStyles.module.css";
 
 interface IProps {
   category: string;
@@ -13,10 +13,13 @@ function SetupStep({ category }: IProps) {
       {setupMarkdown.map((element) => {
         return (
           <>
-              {element.md && <ReactMarkdown
-             className={style.reactMarkdown} 
-              children={element.md}/>}
-              
+            {element.md && (
+              <ReactMarkdown
+                linkTarget={"_blank"}
+                className={style.reactMarkdown}
+                children={element.md}
+              />
+            )}
           </>
         );
       })}

@@ -42,6 +42,7 @@ function HowTos({ category }: IProps) {
               {isOpened && (
                 <>
                   <ReactMarkdown
+                    linkTarget={"_blank"}
                     className={style.reactMarkdown}
                     children={element.md}
                   />
