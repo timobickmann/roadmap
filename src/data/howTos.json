@@ -1,65 +1,7 @@
 [
   {
     "category": "tailwind",
-    "subcategory": "addCustomStyleToTailwind",
-    "title": "Add custom Styles to Tailwind",
-    "description": "There are multiple ways to customize your styles in Tailwind.",
-    "language": "",
-    "file": "",
-    "code": ""
-  },
-  {
-    "category": "tailwind",
-    "subcategory": "addCustomStyleToTailwind",
-    "title": "Use arbitrary values",
-    "description": "If you are in a situation where you really need to be pixel-perfect and need something like 'top: 10px' you can use Tailwind's square bracket notation just for that. This is basically inline style, but can be used with Tailwind modifiers like hover:",
-    "language": "html",
-    "file": "",
-    "code": "<div class=\"top-[10px]\"></div>\n\n<div class=\"hover:top-[20px]\"></div>"
-  },
-  {
-    "category": "tailwind",
-    "subcategory": "addCustomStyleToTailwind",
-    "title": "Use CSS and @layer",
-    "description": "The easiest approach to add custom CSS is to just add the CSS to your stylesheet with @layer:",
-    "language": "css",
-    "file": "index.css",
-    "code": "@layer base {\n  a {\n    color: rgb(157, 178, 191);\n    text-decoration: underline;\n  }\n}"
-  },
-  {
-    "category": "tailwind",
-    "subcategory": "addCustomStyleToTailwind",
-    "title": "Why does Tailwind group styles into layers?",
-    "description": "In CSS, the order of the rules in your stylesheet decides which declaration wins when two selectors have the same specificity.\nTo manage this, Tailwind organizes the styles it generates into three different layers — a concept popularized by ITCSS.\n- The base layer is for things like reset rules or default styles applied to plain HTML elements.\n- The components layer is for class-based styles that you want to be able to override with utilities.\n- The utilities layer is for small, single-purpose classes that should always take precedence over any other styles.",
-    "language": "",
-    "file": "",
-    "code": ""
-  },
-  {
-    "category": "tailwind",
-    "subcategory": "addCustomStyleToTailwind",
-    "title": "Use Tailwind Config",
-    "description": "Another approach is to add your custom styles to your tailwind.config using the plugin system. This makes sharing your styles to others or between different projects very easy.",
-    "language": "",
-    "file": "tailwind.config.js",
-    "code": "const plugin = require(\"tailwindcss/plugin\");\n\nplugins: [\n  plugin(function ({ addBase }) {\n    addBase({\n      a: { color: \"rgb(157, 178, 191)\", \"text-decoration\": \"underline\" }\n    })   \n  })\n]"
-  },
-  {
-    "category": "tailwind",
-    "subcategory": "test",
-    "title": "Test",
-    "description": "Description 1",
-    "language": "",
-    "file": "",
-    "code": ""
-  },
-  {
-    "category": "tailwind",
-    "subcategory": "test",
-    "title": "Test",
-    "description": "Description 2",
-    "language": "",
-    "file": "",
-    "code": ""
+    "subcategory": "Add Custom Styles To Tailwind",
+    "md": "## Add custom Styles to Tailwind\n\nThere are multiple ways to customize your styles in Tailwind.\n\n## Use arbitrary values\n\nIf you are in a situation where you really need to be pixel-perfect and need something like 'top: 10px' you can use Tailwind's square bracket notation just for that. This is basically inline style, but can be used with Tailwind modifiers like hover:\n\n```\n<div class=\"top-[10px]\"><\/div> \n<div class=\"hover:top-[20px]\"><\/div>\n```\n\n## Use CSS and @layer\n\nThe easiest approach to add custom CSS is to just add the CSS to your stylesheet with @layer:\n\n```css\nindex.css\n\n@layer base {\n  a {\n    color: rgb(157, 178, 191);\n    text-decoration: underline; \n  } \n}\n```\n\n## Why does Tailwind group styles into layers?\n\nIn CSS, the order of the rules in your stylesheet decides which declaration wins when two selectors have the same specificity. To manage this, Tailwind organizes the styles it generates into three different layers - a concept popularized by ITCSS. \n- The base layer is for things like reset rules or default styles applied to plain HTML elements. \n- The components layer is for class-based styles that you want to be able to override with utilities. \n- The utilities layer is for small, single-purpose classes that should always take precedence over any other styles.\n\n## Use Tailwind Config\n\nAnother approach is to add your custom styles to your tailwind.config using the plugin system. This makes sharing your styles to others or between different projects very easy.\n\n```js\ntailwind.config.js\n\nconst plugin = require(\"tailwindcss\/plugin\");\n\nplugins: [\n  plugin(function ({ addBase }) {\n    addBase({ \n      a: { color: \"rgb(157, 178, 191)\", \"text-decoration\": \"underline\" } \n    }) \n  }) \n]\n```"
   }
 ]

@@ -1,30 +1,21 @@
 [
   {
-    "category": "tailwind",
-    "title": "Cheat Sheet",
-    "description": "If you know CSS this is literally all you need to use Tailwind",
-    "link": "https://nerdcave.com/tailwind-cheat-sheet",
-    "linktext": "nerdcave.com"
+    "category": "vite",
+    "md": "### Community Templates\nTemplates to start your project with\n\n[GitHub](https://github.com/vitejs/awesome-vite#templates)"
   },
-  {
-    "category": "tailwind",
-    "title": "Tailwind Documentation",
-    "description": "",
-    "link": "https://tailwindcss.com/docs/installation",
-    "linktext": "tailwindcss.com"
-  },
+
   {
     "category": "vite",
-    "title": "Community Templates",
-    "description": "Templates to start your project with",
-    "link": "https://github.com/vitejs/awesome-vite#templates",
-    "linktext": "GitHub"
+    "md": "### Edwards Starter Projects\n\n[starters.tanguay.eu](https://starters.tanguay.eu/)"
   },
+
   {
-    "category": "vite",
-    "title": "Edwards Starter Projects",
-    "description": "",
-    "link": "https://starters.tanguay.eu",
-    "linktext": "starters.tanguay.eu"
+    "category": "tailwind",
+    "md": "### Cheat Sheet\nIf you know CSS this is literally all you need to use Tailwind\n\n[nerdcave.com](https://nerdcave.com/tailwind-cheat-sheet)"
+  },
+
+  {
+    "category": "tailwind",
+    "md": "### Tailwind Documentation\n\n[tailwindcss.com](https://tailwindcss.com/docs/installation)"
   }
 ]
