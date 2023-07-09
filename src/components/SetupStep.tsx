@@ -1,6 +1,9 @@
 import setupData from "../data/setup.json";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import style from "./markdownStyles.module.css";
+import {Prism as SyntaxHighlighter} from "react-syntax-highlighter"
+import {dark} from "react-syntax-highlighter/dist/esm/styles/prism"
+
 
 interface IProps {
   category: string;
