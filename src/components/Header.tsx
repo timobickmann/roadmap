@@ -4,7 +4,8 @@ import { FaBars } from "react-icons/fa6";
 import { SiGithub } from "react-icons/si";
 
 function Header() {
-  const { isMobile, toggleSidebarIsOpened, toggleThemeChange  } = useContext(AppContext);
+  const { isMobile, toggleSidebarIsOpened, setCurrentTheme } =
+    useContext(AppContext);
   const detailsRef = useRef<HTMLDetailsElement>(null);
 
   useEffect(() => {
@@ -24,7 +25,9 @@ function Header() {
     };
   }, []);
 
-
+  function handleThemeClick(theme: string) {
+    setCurrentTheme(theme);
+  }
 
   return (
     <>
@@ -74,7 +77,7 @@ function Header() {
                       <button
                         data-theme="dark"
                         className="w-full rounded px-5 py-2 text-left hover:bg-neutral hover:text-neutral-content"
-                        onClick={() => toggleThemeChange("dark")}
+                        onClick={() => handleThemeClick("dark")}
                       >
                         Dark
                       </button>
@@ -83,7 +86,7 @@ function Header() {
                       <button
                         data-theme="business"
                         className="w-full rounded px-5 py-2 text-left hover:bg-neutral hover:text-neutral-content"
-                        onClick={() => toggleThemeChange("business")}
+                        onClick={() => handleThemeClick("business")}
                       >
                         Business
                       </button>
@@ -92,7 +95,7 @@ function Header() {
                       <button
                         data-theme="synthwave"
                         className="w-full rounded px-5 py-2 text-left hover:bg-neutral hover:text-neutral-content"
-                        onClick={() => toggleThemeChange("synthwave")}
+                        onClick={() => handleThemeClick("synthwave")}
                       >
                         Synthwave
                       </button>
@@ -101,7 +104,7 @@ function Header() {
                       <button
                         data-theme="halloween"
                         className="w-full rounded px-5 py-2 text-left hover:bg-neutral hover:text-neutral-content"
-                        onClick={() => toggleThemeChange("halloween")}
+                        onClick={() => handleThemeClick("halloween")}
                       >
                         Hallowen
                       </button>
@@ -110,7 +113,7 @@ function Header() {
                       <button
                         data-theme="forest"
                         className="w-full rounded px-5 py-2 text-left hover:bg-neutral hover:text-neutral-content"
-                        onClick={() => toggleThemeChange("forest")}
+                        onClick={() => handleThemeClick("forest")}
                       >
                         Forest
                       </button>
@@ -119,7 +122,7 @@ function Header() {
                       <button
                         data-theme="dracula"
                         className="w-full rounded px-5 py-2 text-left hover:bg-neutral hover:text-neutral-content"
-                        onClick={() => toggleThemeChange("dracula")}
+                        onClick={() => handleThemeClick("dracula")}
                       >
                         Dracula
                       </button>
@@ -128,7 +131,7 @@ function Header() {
                       <button
                         data-theme="night"
                         className="w-full rounded px-5 py-2 text-left hover:bg-neutral hover:text-neutral-content"
-                        onClick={() => toggleThemeChange("night")}
+                        onClick={() => handleThemeClick("night")}
                       >
                         Night
                       </button>
@@ -137,7 +140,7 @@ function Header() {
                       <button
                         data-theme="coffee"
                         className="w-full rounded px-5 py-2 text-left hover:bg-neutral hover:text-neutral-content"
-                        onClick={() => toggleThemeChange("coffee")}
+                        onClick={() => handleThemeClick("coffee")}
                       >
                         Coffee
                       </button>
@@ -151,7 +154,7 @@ function Header() {
                       <button
                         data-theme="autumn"
                         className="w-full rounded px-5 py-2 text-left hover:bg-neutral hover:text-neutral-content"
-                        onClick={() => toggleThemeChange("autumn")}
+                        onClick={() => handleThemeClick("autumn")}
                       >
                         Autumn
                       </button>
@@ -160,7 +163,7 @@ function Header() {
                       <button
                         data-theme="wireframe"
                         className="w-full rounded px-5 py-2 text-left hover:bg-neutral hover:text-neutral-content"
-                        onClick={() => toggleThemeChange("wireframe")}
+                        onClick={() => handleThemeClick("wireframe")}
                       >
                         Wireframe
                       </button>
@@ -169,7 +172,7 @@ function Header() {
                       <button
                         data-theme="lofi"
                         className="w-full rounded px-5 py-2 text-left hover:bg-neutral hover:text-neutral-content"
-                        onClick={() => toggleThemeChange("lofi")}
+                        onClick={() => handleThemeClick("lofi")}
                       >
                         Lofi
                       </button>
@@ -178,7 +181,7 @@ function Header() {
                       <button
                         data-theme="garden"
                         className="w-full rounded px-5 py-2 text-left hover:bg-neutral hover:text-neutral-content"
-                        onClick={() => toggleThemeChange("garden")}
+                        onClick={() => handleThemeClick("garden")}
                       >
                         Garden
                       </button>
@@ -187,7 +190,7 @@ function Header() {
                       <button
                         data-theme="retro"
                         className="w-full rounded px-5 py-2 text-left hover:bg-neutral hover:text-neutral-content"
-                        onClick={() => toggleThemeChange("retro")}
+                        onClick={() => handleThemeClick("retro")}
                       >
                         Retro
                       </button>
@@ -196,7 +199,7 @@ function Header() {
                       <button
                         data-theme="cupcake"
                         className="w-full rounded px-5 py-2 text-left hover:bg-neutral hover:text-neutral-content"
-                        onClick={() => toggleThemeChange("cupcake")}
+                        onClick={() => handleThemeClick("cupcake")}
                       >
                         Cupcake
                       </button>
