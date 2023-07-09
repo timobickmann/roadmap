@@ -15,7 +15,7 @@
 }
 
 .reactMarkdown pre {
-  @apply !p-1 mt-5 w-[85vw] overflow-y-auto rounded-md !border-0 !bg-neutral text-sm !shadow-none sm:w-96 md:w-[28rem] lg:w-min lg:min-w-[28rem];
+  @apply !p-1 mt-5 w-[85vw] overflow-y-auto rounded-md !border-0 !bg-neutral text-sm !shadow-none sm:w-96 md:w-[28rem] lg:w-min lg:min-w-[28rem] scrollbar-hide;
 }
 
 .reactMarkdown code {
