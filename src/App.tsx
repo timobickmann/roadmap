@@ -21,12 +21,12 @@ function App() {
     <>
       <Router>
         <div
-          className="appContainer flex min-h-screen"
+          className="appContainer flex min-h-screen w-screen"
           data-theme={currentTheme}
         >
           <SidebarResources />
 
-          <div className=" mx-2 mb-5 w-full sm:mr-5 md:mr-8 lg:mr-10">
+          <div className=" px-1 mb-5 w-full sm:mr-5 md:mr-8 lg:mr-10">
             <Header />
             <main>
               <Routes>
