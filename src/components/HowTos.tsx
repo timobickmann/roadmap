@@ -4,6 +4,8 @@ import style from "./markdownStyles.module.css";
 import { FaCaretDown } from "react-icons/fa6";
 import { FaCaretUp } from "react-icons/fa6";
 import { useState } from "react";
+import {Prism as SyntaxHighlighter} from "react-syntax-highlighter"
+import {oneDark} from "react-syntax-highlighter/dist/esm/styles/prism"
 
 interface IProps {
   category: string;
@@ -45,6 +47,23 @@ function HowTos({ category }: IProps) {
                     linkTarget={"_blank"}
                     className={style.reactMarkdown}
                     children={element.md}
+                    components={{
+                      code({node, inline, className, children, ...props}) {
+                        const match = /language-(\w+)/.exec(className || '')
+                        return !inline && match ? (
+                          <SyntaxHighlighter
+                            {...props}
+                            children={String(children).replace(/\n$/, '')}
+                            style={oneDark}
+                            language={match[1]}
+                          />
+                        ) : (
+                          <code {...props} className={className}>
+                            {children}
+                          </code>
+                        )
+                      }
+                    }}
                   />
                   <button
                     className=" flex items-center gap-2"
