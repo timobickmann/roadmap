@@ -4,8 +4,9 @@ import { FaBars } from "react-icons/fa6";
 import { SiGithub } from "react-icons/si";
 
 function Header() {
-  const { isMobile, toggleSidebarIsOpened } = useContext(AppContext);
-  const detailsRef = useRef<HTMLDetailsElement>(null)
+  const { isMobile, toggleSidebarIsOpened, setCurrentTheme } =
+    useContext(AppContext);
+  const detailsRef = useRef<HTMLDetailsElement>(null);
 
   useEffect(() => {
     function handleClickOutsideTheme(event: MouseEvent) {
@@ -13,7 +14,8 @@ function Header() {
         detailsRef.current &&
         !detailsRef.current.contains(event.target as Node)
       ) {
-        detailsRef.current.removeAttribute("open")      }
+        detailsRef.current.removeAttribute("open");
+      }
     }
 
     document.addEventListener("click", handleClickOutsideTheme);
@@ -24,8 +26,7 @@ function Header() {
   }, []);
 
   function handleThemeClick(theme: string) {
-    const bodyTag = document.querySelector("body");
-    bodyTag?.setAttribute("data-theme", theme);
+    setCurrentTheme(theme);
   }
 
   return (
@@ -63,9 +64,9 @@ function Header() {
         </div>
 
         <ul className="flex gap-5">
-        <li>
+          <li>
             <details ref={detailsRef}>
-              <summary className="list-none cursor-pointer rounded  px-4 py-1 hover:bg-neutral hover:text-neutral-content">
+              <summary className="cursor-pointer list-none rounded  px-4 py-1 hover:bg-neutral hover:text-neutral-content">
                 Theme
               </summary>
               <ul className="absolute right-5 mt-2 flex gap-5 rounded bg-base-200 px-3 py-2">

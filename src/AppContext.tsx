@@ -5,10 +5,12 @@ interface IAppContext {
   sidebarIsOpened: boolean;
   toggleSidebarIsOpened: () => void;
   isMobile: boolean;
+  currentTheme: string;
+  setCurrentTheme: (theme: string) => void;
 }
 
 interface IAppProvider {
-	children: React.ReactNode;
+  children: React.ReactNode;
 }
 
 export const AppContext = createContext<IAppContext>({} as IAppContext);
@@ -21,8 +23,18 @@ export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
 
   const isMobile = useMediaQuery("(max-width: 640px)");
 
+  const [currentTheme, setCurrentTheme] = useState("dark");
+
   return (
-    <AppContext.Provider value={{ sidebarIsOpened, toggleSidebarIsOpened, isMobile }}>
+    <AppContext.Provider
+      value={{
+        sidebarIsOpened,
+        toggleSidebarIsOpened,
+        isMobile,
+        currentTheme,
+        setCurrentTheme,
+      }}
+    >
       {children}
     </AppContext.Provider>
   );
