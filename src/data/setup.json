@@ -10,6 +10,6 @@
 
   {
     "category": "daisyui",
-    "md": "## Step 1 - Install daisyUI \n\n```bash\nnpm i -D daisyui@latest\n```\n\n## Step 2 - Add daisyUI to your tailwind.config\n\n```js\ntailwind.config.js\n\nmodule.exports = { \n//... \nplugins: [require(\"daisyui\")], \n}\n```"
+    "md": "# daisyUI Installation\n\n## Step 1 - Install daisyUI \n\n```bash\nnpm i -D daisyui@latest\n```\n\n## Step 2 - Add daisyUI to your tailwind.config\n\n```js\ntailwind.config.js\n\n/** @type {import('tailwindcss').Config} */\nexport default = { \n           // Enables all Themes\n  daisyui: {themes: true}, \n           // Enables selected themes\n  daisyui: {themes: [\"light\", \"dark\"]},\n  //... \n  plugins: [require(\"daisyui\")] \n}\n```"
   }
 ]
