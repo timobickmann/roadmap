@@ -1,24 +1,27 @@
 .reactMarkdown {
   @apply m-5 flex flex-col items-center gap-1 text-center sm:items-start sm:text-left md:pr-2 lg:pr-96;
-}
 
-.reactMarkdown h1 {
-  @apply text-3xl;
-}
+  & h1 {
+    @apply text-3xl;
+  }
 
-.reactMarkdown h2 {
-  @apply mb-2 mt-5 text-2xl;
-}
+  & h2 {
+    @apply mb-2 mt-5 text-2xl;
+  }
 
-.reactMarkdown h3 {
-  @apply mb-1 text-xl;
-}
+  & h3 {
+    @apply mb-1 text-xl;
+  }
 
-.reactMarkdown pre {
-  @apply !p-1 mt-5 w-[85vw] overflow-y-auto rounded-md !border-0 !bg-neutral text-sm !shadow-none sm:w-96 md:w-[28rem] lg:w-min lg:min-w-[28rem] scrollbar-hide;
-}
+  & pre {
+    @apply mt-5 w-[85vw] overflow-y-auto rounded-md !border-0 !bg-neutral !p-1 text-sm !shadow-none scrollbar-hide sm:w-96 md:w-[28rem] lg:w-min lg:min-w-[28rem];
+  }
+  & p {
+    text-wrap: balance;
+  }
 
-.reactMarkdown code {
-  @apply !bg-neutral !text-neutral-content ; 
-  text-shadow: none !important;
+  & code {
+    @apply !bg-neutral !text-neutral-content;
+    text-shadow: none !important;
+  }
 }
