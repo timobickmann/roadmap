@@ -101,7 +101,7 @@ function SidebarResources() {
                 </li>
                 <li className="mt-3 flex flex-col">
                   <p className="flex items-center gap-2 py-1 pl-4 font-bold">
-                    <SiTypescript className="text-primary" /> Tools
+                    <SiTypescript className="text-primary" /> TS
                   </p>
                   <SidebarResourcesItem sidebarItem={"ts"} />
                 </li>
