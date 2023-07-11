@@ -1,7 +1,14 @@
 import { AppContext } from "../AppContext";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { SiTailwindcss, SiVite, SiDaisyui } from "react-icons/si";
+import {
+  SiTailwindcss,
+  SiVite,
+  SiDaisyui,
+  SiCss3,
+  SiReact,
+} from "react-icons/si";
+import { FiPenTool } from "react-icons/fi";
 import SidebarResourcesItem from "./SidebarResourcesItem";
 
 function SidebarResources() {
@@ -12,7 +19,7 @@ function SidebarResources() {
     <>
       <div className="flex">
         {(!isMobile || sidebarIsOpened) && (
-          <aside className="fixed bottom-0 left-0 top-0 z-40 h-screen w-60 overflow-y-scroll bg-base-100 pl-3 scrollbar-hide sm:sticky sm:w-60">
+          <aside className="scrollbar-hide fixed bottom-0 left-0 top-0 z-40 h-screen w-60 overflow-y-scroll bg-base-100 pl-3 sm:sticky sm:w-60">
             <svg
               className="ml-4 mt-3"
               width={99}
@@ -37,7 +44,7 @@ function SidebarResources() {
               <ul className="flex flex-col py-10">
                 <li>
                   <Link
-                  onClick={toggleSidebarIsOpened}
+                    onClick={toggleSidebarIsOpened}
                     className="block rounded py-2 pl-4 hover:bg-neutral hover:text-neutral-content"
                     to="/"
                   >
@@ -46,7 +53,7 @@ function SidebarResources() {
                 </li>
                 <li>
                   <Link
-                  onClick={toggleSidebarIsOpened}
+                    onClick={toggleSidebarIsOpened}
                     className="block rounded py-2 pl-4 hover:bg-neutral hover:text-neutral-content"
                     to="/roadmap"
                   >
@@ -71,6 +78,24 @@ function SidebarResources() {
                     <SiDaisyui className="text-accent" /> daisyUI
                   </p>
                   <SidebarResourcesItem sidebarItem={"daisyui"} />
+                </li>
+                <li className="mt-3 flex flex-col">
+                  <p className="flex items-center gap-2 py-1 pl-4 font-bold">
+                    <SiCss3 className="text-primary" /> CSS
+                  </p>
+                  <SidebarResourcesItem sidebarItem={"css"} />
+                </li>
+                <li className="mt-3 flex flex-col">
+                  <p className="flex items-center gap-2 py-1 pl-4 font-bold">
+                    <SiReact className="text-secondary" /> React
+                  </p>
+                  <SidebarResourcesItem sidebarItem={"react"} />
+                </li>
+                <li className="mt-3 flex flex-col">
+                  <p className="flex items-center gap-2 py-1 pl-4 font-bold">
+                    <FiPenTool className="text-accent" /> Tools
+                  </p>
+                  <SidebarResourcesItem sidebarItem={"tools"} />
                 </li>
               </ul>
             </nav>

@@ -17,5 +17,34 @@
   {
     "category": "tailwind",
     "md": "### Tailwind Documentation\n\n[tailwindcss.com](https://tailwindcss.com/docs/installation)"
-  }
+  },
+  {
+    "category": "css",
+    "md": "### CSS in 2023 - Theo YouTube\n\n[YouTube](https://www.youtube.com/watch?v=CQuTF-bkOgc)"
+  },
+  {
+    "category": "css",
+    "md": "### Color Palette Tool\n\n[ColorBox](https://colorbox.io/)"
+  },
+
+  {
+    "category": "react",
+    "md": "### Clean Code concepts adapted for JavaScript\n\n[GitHub](https://github.com/ryanmcdermott/clean-code-javascript)"
+  },
+
+  {
+    "category": "react",
+    "md": "### A simple, scalable, and powerful architecture for building production ready React applications\n\n[GitHub](https://github.com/alan2207/bulletproof-react/tree/master)"
+  },
+
+  {
+    "category": "react",
+    "md": "### Introduction · React Bits\n\n[gitbooks.io](https://vasanthk.gitbooks.io/react-bits/content/)"
+  },
+  {
+    "category": "tools",
+    "md": "### Color Palette Tool\n\n[ColorBox](https://colorbox.io/)"
+  },
+
+  { "category": "", "md": "" }
 ]

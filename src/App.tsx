@@ -1,4 +1,4 @@
-import "./index.css"
+import "./index.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useContext } from "react";
 import { AppContext } from "./AppContext";
@@ -15,6 +15,13 @@ import TailwindHowTos from "./pages/resources/TailwindHowTos";
 import DaisyuiSetup from "./pages/resources/DaisyuiSetup";
 import DaisyuiResources from "./pages/resources/DaisyuiResources";
 import DaisyuiHowTos from "./pages/resources/DaisyuiHowTos";
+import CssSetup from "./pages/resources/CssSetup";
+import CssResources from "./pages/resources/CssResources";
+import CssHowTos from "./pages/resources/CssHowTos";
+import ReactSetup from "./pages/resources/ReactSetup";
+import ReactResources from "./pages/resources/ReactResources";
+import ReactHowTos from "./pages/resources/ReactHowTos";
+import ToolsResources from "./pages/resources/ToolsResources";
 
 function App() {
   const { currentTheme } = useContext(AppContext);
@@ -27,7 +34,7 @@ function App() {
         >
           <SidebarResources />
 
-          <div className=" px-1 mb-5 w-full sm:mr-5 md:mr-8 lg:mr-10">
+          <div className=" mb-5 w-full px-1 sm:mr-5 md:mr-8 lg:mr-10">
             <Header />
             <main>
               <Routes>
@@ -60,6 +67,16 @@ function App() {
                   path="/resources/daisyui/howtos"
                   element={<DaisyuiHowTos />}
                 />
+                <Route path="/resources/css" element={<CssResources />} />
+                <Route path="/resources/css/setup" element={<CssSetup />} />
+                <Route path="/resources/css/howtos" element={<CssHowTos />} />
+                <Route path="/resources/react" element={<ReactResources />} />
+                <Route path="/resources/react/setup" element={<ReactSetup />} />
+                <Route
+                  path="/resources/react/howtos"
+                  element={<ReactHowTos />}
+                />
+                <Route path="/resources/tools" element={<ToolsResources />} />
               </Routes>
             </main>
           </div>
