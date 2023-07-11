@@ -46,5 +46,15 @@
     "md": "### Color Palette Tool\n\n[ColorBox](https://colorbox.io/)"
   },
 
+  {
+    "category": "js",
+    "md": "### Naming Cheatsheet: Comprehensive language-agnostic guidelines on variables naming\n\n[GitHub](https://github.com/kettanaito/naming-cheatsheet)"
+  },
+
+  {
+    "category": "ts",
+    "md": "### TypeScript: Handbook - The TypeScript Handbook\n\n[typescriptlang.org](https://www.typescriptlang.org/docs/handbook/intro.html)"
+  },
+
   { "category": "", "md": "" }
 ]

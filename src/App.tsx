@@ -22,6 +22,8 @@ import ReactSetup from "./pages/resources/ReactSetup";
 import ReactResources from "./pages/resources/ReactResources";
 import ReactHowTos from "./pages/resources/ReactHowTos";
 import ToolsResources from "./pages/resources/ToolsResources";
+import JsResources from "./pages/resources/JsResources";
+import TsResources from "./pages/resources/TsResources";
 
 function App() {
   const { currentTheme } = useContext(AppContext);
@@ -77,6 +79,8 @@ function App() {
                   element={<ReactHowTos />}
                 />
                 <Route path="/resources/tools" element={<ToolsResources />} />
+                <Route path="/resources/js" element={<JsResources />} />
+                <Route path="/resources/ts" element={<TsResources />} />
               </Routes>
             </main>
           </div>

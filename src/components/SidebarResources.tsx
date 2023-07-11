@@ -7,6 +7,8 @@ import {
   SiDaisyui,
   SiCss3,
   SiReact,
+  SiJavascript,
+  SiTypescript,
 } from "react-icons/si";
 import { FiPenTool } from "react-icons/fi";
 import SidebarResourcesItem from "./SidebarResourcesItem";
@@ -93,7 +95,19 @@ function SidebarResources() {
                 </li>
                 <li className="mt-3 flex flex-col">
                   <p className="flex items-center gap-2 py-1 pl-4 font-bold">
-                    <FiPenTool className="text-accent" /> Tools
+                    <SiJavascript className="text-accent" /> JS
+                  </p>
+                  <SidebarResourcesItem sidebarItem={"js"} />
+                </li>
+                <li className="mt-3 flex flex-col">
+                  <p className="flex items-center gap-2 py-1 pl-4 font-bold">
+                    <SiTypescript className="text-primary" /> Tools
+                  </p>
+                  <SidebarResourcesItem sidebarItem={"ts"} />
+                </li>
+                <li className="mt-3 flex flex-col">
+                  <p className="flex items-center gap-2 py-1 pl-4 font-bold">
+                    <FiPenTool className="text-secondary" /> Tools
                   </p>
                   <SidebarResourcesItem sidebarItem={"tools"} />
                 </li>
