@@ -14,8 +14,15 @@
   }
 
   & pre {
-    @apply mt-5 w-[85vw] overflow-y-auto rounded-md !border-0 !bg-neutral !p-1 text-sm !shadow-none scrollbar-hide sm:w-96 md:w-[28rem] lg:w-min lg:min-w-[28rem];
+    @apply mt-5 w-[85vw] overflow-y-auto rounded-md !border-0 !bg-neutral !p-1 text-sm !shadow-none sm:w-96 md:w-[28rem] lg:w-min lg:min-w-[28rem];
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
+
+  & pre::-webkit-scrollbar {
+    display: none;
+  }
+
   & p {
     text-wrap: balance;
   }
