@@ -169,6 +169,7 @@ function RoadmapSvg() {
       >
         {"DevOps"}
       </text>
+
       <path
         id="desktop-apps-box"
         fill="#fff"
@@ -190,6 +191,7 @@ function RoadmapSvg() {
         </tspan>
         {"ps"}
       </text>
+
       <path
         id="mobile-apps-box"
         fill="#fff"
