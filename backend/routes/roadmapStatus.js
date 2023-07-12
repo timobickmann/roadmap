@@ -1,29 +1,18 @@
 const express = require("express");
-const RoadmapStatus = require("../models/roadmapStatusModel");
-
+const {
+  createRoadmapStatus,
+  getRoadmapStatus,
+  getAllRoadmapStatus,
+  updateRoadmapStatus,
+} = require("../controllers/roadmapStatusController");
 const router = express.Router();
 
-router.get("/", (req, res) => {
-  res.json({ mssg: "GET all roadmap status" });
-});
+router.get("/", getAllRoadmapStatus);
 
-router.get("/:id", (req, res) => {
-  res.json({ mssg: "GET a single roadmap status" });
-});
+router.get("/:id", getRoadmapStatus);
 
-router.post("/", async (req, res) => {
-  const { name, status } = req.body;
+router.post("/", createRoadmapStatus);
 
-  try {
-    const roadmapStatus = await RoadmapStatus.create({ name, status });
-    res.status(200).json(roadmapStatus);
-  } catch (error) {
-    res.status(400).json({ error: error.message });
-  }
-});
-
-router.patch("/:id", (req, res) => {
-  res.json({ mssg: "UPDATE a roadmap status" });
-});
+router.patch("/:id", updateRoadmapStatus);
 
 module.exports = router;
