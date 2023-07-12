@@ -1,4 +1,20 @@
+import { useEffect, useState } from "react";
+
 function RoadmapSvg() {
+  const [roadmapStatus, setRoadmapStatus] = useState(null);
+
+  useEffect(() => {
+    const fetchRoadmapStatus = async () => {
+      const response = await fetch("http://localhost:4000/api/roadmap-status");
+      const json = await response.json();
+
+      if (response.ok) {
+        setRoadmapStatus(json)
+      }
+    };
+    fetchRoadmapStatus();
+  }, []);
+
   return (
     <svg
       className="w-4/5 sm:w-full md:w-4/5 md:max-w-[30rem]  lg:max-w-[40rem]"
@@ -442,7 +458,7 @@ function RoadmapSvg() {
       </g>
       <g>
         <path
-          id="web-apps-box1"
+          id="ui-box"
           fill="#fff"
           stroke="#000"
           strokeWidth=".83px"
@@ -454,7 +470,7 @@ function RoadmapSvg() {
           fontFamily="'ArialMT','Arial',sans-serif"
           fontSize="8.989px"
           transform="matrix(1 0 0 .99928 0 .428)"
-          id="web-apps-text1"
+          id="ui-text"
         >
           {"UI/UX"}
         </text>
@@ -688,14 +704,14 @@ function RoadmapSvg() {
       </g>
       <g>
         <path
-          id="ui-libs-box1"
+          id="component-libs-box"
           fill="#fff"
           stroke="#000"
           strokeWidth=".83px"
           d="M294.832 302.06H378.16499999999996V327.06H294.832z"
         />
         <g
-          id="ui-libs-text1"
+          id="component-libs-text"
           fontFamily="'ArialMT','Arial',sans-serif"
           fontSize="12px"
         >
