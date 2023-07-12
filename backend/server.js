@@ -1,10 +1,17 @@
 const express = require("express");
-require("dotenv").config()
+const roadmapStatusRoutes = require("./routes/roadmap-status")
+require("dotenv").config();
+
 
 const app = express();
 
-app.get("/", (req, res) => {
-  res.json({ mssg: "Welcome to the app" });
+app.use((req, res, next) => {
+  console.log(req.path, req.method);
+  next();
 });
 
-app.listen(process.env.PORT, () => console.log("listening on port", process.env.PORT));
+app.use("/api/roadmap-status", roadmapStatusRoutes)
+
+app.listen(process.env.PORT, () =>
+  console.log("listening on port", process.env.PORT)
+);
