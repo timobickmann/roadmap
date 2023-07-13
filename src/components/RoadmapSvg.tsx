@@ -1,13 +1,21 @@
+//@ts-nocheck
 import { useEffect, useState } from "react";
+import RoadmapPopup from "./RoadmapPopup";
 
 interface RoadmapStatus {
-_id: string,
-name: string,
-status: string
+  _id: string;
+  name: string;
+  status: string;
+}
+interface Model {
+  currentModel: string
 }
 
 function RoadmapSvg() {
-  const [roadmapStatus, setRoadmapStatus] = useState<RoadmapStatus[] | null>(null);
+  const [roadmapStatus, setRoadmapStatus] = useState<RoadmapStatus[] | null>(
+    null
+  );
+  const [currentModel, setCurrentModel] = useState<Model | null>(null)
 
   useEffect(() => {
     const fetchRoadmapStatus = async () => {
@@ -37,7 +45,10 @@ function RoadmapSvg() {
       await patchData(id, updatedData);
       console.log(`Item "${roadmapItem}" marked as finished`);
     } catch (error) {
-      console.error("Error marking item as finished:", (error as Error).message);
+      console.error(
+        "Error marking item as finished:",
+        (error as Error).message
+      );
     }
   };
 
@@ -57,7 +68,10 @@ function RoadmapSvg() {
       await patchData(id, updatedData);
       console.log(`Item "${roadmapItem}" marked as doing`);
     } catch (error) {
-      console.error("Error marking item as finished:", (error as Error).message);
+      console.error(
+        "Error marking item as finished:",
+        (error as Error).message
+      );
     }
   };
 
@@ -77,7 +91,10 @@ function RoadmapSvg() {
       await patchData(id, updatedData);
       console.log(`Item "${roadmapItem}" marked as todo`);
     } catch (error) {
-      console.error("Error marking item as finished:", (error as Error).message);
+      console.error(
+        "Error marking item as finished:",
+        (error as Error).message
+      );
     }
   };
 
@@ -86,7 +103,7 @@ function RoadmapSvg() {
     return foundItem?._id;
   };
 
-  const patchData = async (id:string, updatedData:string) => {
+  const patchData = async (id: string, updatedData: string) => {
     try {
       const response = await fetch(
         `http://localhost:4000/api/roadmap-status/${id}`,
@@ -109,7 +126,7 @@ function RoadmapSvg() {
     }
   };
 
-  function getColor(roadmapItemId:string) {
+  function getColor(roadmapItemId: string) {
     const roadmapItem = roadmapStatus?.find(
       (item) => item.name === roadmapItemId
     );
@@ -127,8 +144,15 @@ function RoadmapSvg() {
     return "hsl(var(--nc))";
   }
 
+  const handleRoadmapItemClick = (roadmapItem) => {
+    setCurrentModel(roadmapItem)
+    window.roadmapModel.showModal();
+  };
+
   return (
     <>
+    <RoadmapPopup roadmapItem={currentModel}/>
+
       <div className="flex gap-10">
         <button
           onClick={() => handleFinished("html")}
@@ -861,6 +885,7 @@ function RoadmapSvg() {
           </g>
           <g>
             <path
+              onClick={() => handleRoadmapItemClick("html")}
               id="html-box"
               fill={getColor("html")}
               stroke="#000"
