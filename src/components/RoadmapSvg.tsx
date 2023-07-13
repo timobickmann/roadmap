@@ -20,7 +20,7 @@ function RoadmapSvg() {
   const handleFinished = async (roadmapItem) => {
     try {
       const id = getItemId(roadmapItem);
-      console.log(id); // logs the correct id
+      console.log(id);
       if (!id) {
         console.log(`Item ${roadmapItem} not found`);
         return;
@@ -32,6 +32,46 @@ function RoadmapSvg() {
 
       await patchData(id, updatedData);
       console.log(`Item "${roadmapItem}" marked as finished`);
+    } catch (error) {
+      console.error("Error marking item as finished:", error.message);
+    }
+  };
+
+  const handleDoing = async (roadmapItem) => {
+    try {
+      const id = getItemId(roadmapItem);
+      console.log(id);
+      if (!id) {
+        console.log(`Item ${roadmapItem} not found`);
+        return;
+      }
+
+      const updatedData = {
+        status: "doing",
+      };
+
+      await patchData(id, updatedData);
+      console.log(`Item "${roadmapItem}" marked as doing`);
+    } catch (error) {
+      console.error("Error marking item as finished:", error.message);
+    }
+  };
+
+  const handleTodo = async (roadmapItem) => {
+    try {
+      const id = getItemId(roadmapItem);
+      console.log(id);
+      if (!id) {
+        console.log(`Item ${roadmapItem} not found`);
+        return;
+      }
+
+      const updatedData = {
+        status: "todo",
+      };
+
+      await patchData(id, updatedData);
+      console.log(`Item "${roadmapItem}" marked as todo`);
     } catch (error) {
       console.error("Error marking item as finished:", error.message);
     }
@@ -49,7 +89,7 @@ function RoadmapSvg() {
         {
           method: "PATCH",
           headers: {
-            "Contect-Type": "application/json",
+            "Content-Type": "application/json",
           },
           body: JSON.stringify(updatedData),
         }
@@ -64,10 +104,6 @@ function RoadmapSvg() {
       throw new Error("Error updating data");
     }
   };
-
-  const handleDoing = async (roadmapItem) => {};
-
-  const handleTodo = async (roadmapItem) => {};
 
   function getColor(roadmapItemId) {
     const roadmapItem = roadmapStatus.find(
@@ -96,10 +132,10 @@ function RoadmapSvg() {
         >
           Finished
         </button>
-        <button onClick={() => handleDoing()} className="btn-warning btn">
+        <button onClick={() => handleDoing("html")} className="btn-warning btn">
           Doing
         </button>
-        <button onClick={() => handleTodo()} className="btn-error btn">
+        <button onClick={() => handleTodo("html")} className="btn-error btn">
           To Do
         </button>
       </div>
