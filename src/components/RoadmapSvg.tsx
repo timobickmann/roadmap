@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 function RoadmapSvg() {
   const [roadmapStatus, setRoadmapStatus] = useState(null);
+  console.log(roadmapStatus);
 
   useEffect(() => {
     const fetchRoadmapStatus = async () => {
@@ -22,23 +23,88 @@ function RoadmapSvg() {
       (item) => item.name === roadmapItemId
     );
 
-    console.log(roadmapItemId);
-
     if (roadmapItem?.status === "finished") {
-      return "green";
+      return "hsl(var(--su))";
     }
     if (roadmapItem?.status === "doing") {
-      return "yellow";
+      return "hsl(var(--wa))";
     }
     if (roadmapItem?.status === "todo") {
-      return "red";
+      return "hsl(var(--er))";
     }
 
-    return "gray";
+    return "hsl(var(--nc))";
   }
+
+  const handleFinished = async (roadmapItem) => {
+    try {
+      const id = getItemId(roadmapItem);
+      console.log(id);
+      if (!id) {
+        console.log(`Item ${roadmapItem} not found`);
+        return;
+      }
+
+      const updatedData = {
+        status: "finished",
+      };
+
+      await patchData(id, roadmapItem);
+      console.log(`Item "${roadmapItem}" marked as finished`);
+    } catch (error) {
+      console.error("Error marking item as finished:", error.message);
+    }
+  };
+
+  const getItemId = (roadmapItem) => {
+    const foundItem = roadmapStatus.find((item) => item.name === roadmapItem);
+    return foundItem._id;
+  };
+
+  const patchData = async (id, updatedData) => {
+    try {
+      const response = await fetch(
+        `http://localhost:4000/api/roadmap-status/${id}`,
+        {
+          method: "PATCH",
+          headers: {
+            "Contect-Type": "application/json",
+          },
+          body: JSON.stringify(updatedData),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Error updating data");
+      }
+
+      const updatedItem = await response.json();
+      console.log("Updated item:", updatedItem);
+    } catch (error) {
+      throw new Error("Error updating data");
+    }
+  };
+
+  const handleDoing = async (roadmapItem) => {};
+
+  const handleTodo = async (roadmapItem) => {};
 
   return (
     <>
+      <div className="flex gap-10">
+        <button
+          onClick={() => handleFinished("html")}
+          className="btn-success btn"
+        >
+          Finished
+        </button>
+        <button onClick={() => handleDoing()} className="btn-warning btn">
+          Doing
+        </button>
+        <button onClick={() => handleTodo()} className="btn-error btn">
+          To Do
+        </button>
+      </div>
       {roadmapStatus && (
         <svg
           className="w-4/5 sm:w-full md:w-4/5 md:max-w-[30rem]  lg:max-w-[40rem]"
