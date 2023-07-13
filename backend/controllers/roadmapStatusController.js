@@ -47,7 +47,8 @@ const updateRoadmapStatus = async (req, res) => {
 
   const roadmapStatus = await RoadmapStatus.findOneAndUpdate(
     { _id: id },
-    { ...req.body }
+    { ...req.body },
+    { new: true }
   );
 
   if (!roadmapStatus) {
