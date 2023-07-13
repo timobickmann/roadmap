@@ -7,6 +7,8 @@ interface IAppContext {
   isMobile: boolean;
   currentTheme: string;
   setCurrentTheme: (theme: string) => void;
+  roadmapStatus: any;
+  setRoadmapStatus: any;
 }
 
 interface IAppProvider {
@@ -25,6 +27,8 @@ export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
 
   const [currentTheme, setCurrentTheme] = useState("dark");
 
+  const [roadmapStatus, setRoadmapStatus] = useState(null);
+
   return (
     <AppContext.Provider
       value={{
@@ -33,6 +37,8 @@ export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
         isMobile,
         currentTheme,
         setCurrentTheme,
+        roadmapStatus,
+        setRoadmapStatus,
       }}
     >
       {children}
