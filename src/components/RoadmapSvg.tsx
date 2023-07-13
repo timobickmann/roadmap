@@ -1,9 +1,13 @@
-//@ts-nocheck
-import { func } from "prop-types";
 import { useEffect, useState } from "react";
 
+interface RoadmapStatus {
+_id: string,
+name: string,
+status: string
+}
+
 function RoadmapSvg() {
-  const [roadmapStatus, setRoadmapStatus] = useState(null);
+  const [roadmapStatus, setRoadmapStatus] = useState<RoadmapStatus[] | null>(null);
 
   useEffect(() => {
     const fetchRoadmapStatus = async () => {
@@ -17,7 +21,7 @@ function RoadmapSvg() {
     fetchRoadmapStatus();
   }, []);
 
-  const handleFinished = async (roadmapItem) => {
+  const handleFinished = async (roadmapItem: string) => {
     try {
       const id = getItemId(roadmapItem);
       console.log(id);
@@ -33,11 +37,11 @@ function RoadmapSvg() {
       await patchData(id, updatedData);
       console.log(`Item "${roadmapItem}" marked as finished`);
     } catch (error) {
-      console.error("Error marking item as finished:", error.message);
+      console.error("Error marking item as finished:", (error as Error).message);
     }
   };
 
-  const handleDoing = async (roadmapItem) => {
+  const handleDoing = async (roadmapItem: string) => {
     try {
       const id = getItemId(roadmapItem);
       console.log(id);
@@ -53,11 +57,11 @@ function RoadmapSvg() {
       await patchData(id, updatedData);
       console.log(`Item "${roadmapItem}" marked as doing`);
     } catch (error) {
-      console.error("Error marking item as finished:", error.message);
+      console.error("Error marking item as finished:", (error as Error).message);
     }
   };
 
-  const handleTodo = async (roadmapItem) => {
+  const handleTodo = async (roadmapItem: string) => {
     try {
       const id = getItemId(roadmapItem);
       console.log(id);
@@ -73,16 +77,16 @@ function RoadmapSvg() {
       await patchData(id, updatedData);
       console.log(`Item "${roadmapItem}" marked as todo`);
     } catch (error) {
-      console.error("Error marking item as finished:", error.message);
+      console.error("Error marking item as finished:", (error as Error).message);
     }
   };
 
-  const getItemId = (roadmapItem) => {
-    const foundItem = roadmapStatus.find((item) => item.name === roadmapItem);
-    return foundItem._id;
+  const getItemId = (roadmapItem: string) => {
+    const foundItem = roadmapStatus?.find((item) => item.name === roadmapItem);
+    return foundItem?._id;
   };
 
-  const patchData = async (id, updatedData) => {
+  const patchData = async (id:string, updatedData:string) => {
     try {
       const response = await fetch(
         `http://localhost:4000/api/roadmap-status/${id}`,
@@ -105,8 +109,8 @@ function RoadmapSvg() {
     }
   };
 
-  function getColor(roadmapItemId) {
-    const roadmapItem = roadmapStatus.find(
+  function getColor(roadmapItemId:string) {
+    const roadmapItem = roadmapStatus?.find(
       (item) => item.name === roadmapItemId
     );
 
