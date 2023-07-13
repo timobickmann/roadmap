@@ -7,8 +7,10 @@ interface IAppContext {
   isMobile: boolean;
   currentTheme: string;
   setCurrentTheme: (theme: string) => void;
-  roadmapStatus: any;
-  setRoadmapStatus: any;
+  roadmapStatus: { _id: string; name: string; status: string }[];
+  setRoadmapStatus: React.Dispatch<
+    React.SetStateAction<{ _id: string; name: string; status: string }[]>
+  >;
 }
 
 interface IAppProvider {
@@ -27,7 +29,9 @@ export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
 
   const [currentTheme, setCurrentTheme] = useState("dark");
 
-  const [roadmapStatus, setRoadmapStatus] = useState(null);
+  const [roadmapStatus, setRoadmapStatus] = useState<
+    { _id: string; name: string; status: string }[]
+  >([]);
 
   return (
     <AppContext.Provider

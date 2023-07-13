@@ -1,4 +1,3 @@
-//@ts-nocheck
 import { useContext } from "react";
 import { AppContext } from "../AppContext";
 
@@ -79,11 +78,11 @@ function RoadmapPopup({ roadmapItem }: IProps) {
   };
 
   const getItemId = (roadmapItem: string) => {
-    const foundItem = roadmapStatus?.find((item) => item.name === roadmapItem);
+    const foundItem = roadmapStatus?.find((item: {_id:string, name: string, status:string}) => item.name === roadmapItem);
     return foundItem?._id;
   };
 
-  const patchData = async (id: string, updatedData: string) => {
+  const patchData = async (id: string, updatedData: {status: string}) => {
     try {
       const response = await fetch(
         `http://localhost:4000/api/roadmap-status/${id}`,
