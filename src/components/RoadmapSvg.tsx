@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 
 function RoadmapSvg() {
   const [roadmapStatus, setRoadmapStatus] = useState(null);
-  console.log(roadmapStatus);
 
   useEffect(() => {
     const fetchRoadmapStatus = async () => {
@@ -18,28 +17,10 @@ function RoadmapSvg() {
     fetchRoadmapStatus();
   }, []);
 
-  function getColor(roadmapItemId) {
-    const roadmapItem = roadmapStatus.find(
-      (item) => item.name === roadmapItemId
-    );
-
-    if (roadmapItem?.status === "finished") {
-      return "hsl(var(--su))";
-    }
-    if (roadmapItem?.status === "doing") {
-      return "hsl(var(--wa))";
-    }
-    if (roadmapItem?.status === "todo") {
-      return "hsl(var(--er))";
-    }
-
-    return "hsl(var(--nc))";
-  }
-
   const handleFinished = async (roadmapItem) => {
     try {
       const id = getItemId(roadmapItem);
-      console.log(id);
+      console.log(id); // logs the correct id
       if (!id) {
         console.log(`Item ${roadmapItem} not found`);
         return;
@@ -49,7 +30,7 @@ function RoadmapSvg() {
         status: "finished",
       };
 
-      await patchData(id, roadmapItem);
+      await patchData(id, updatedData);
       console.log(`Item "${roadmapItem}" marked as finished`);
     } catch (error) {
       console.error("Error marking item as finished:", error.message);
@@ -73,7 +54,6 @@ function RoadmapSvg() {
           body: JSON.stringify(updatedData),
         }
       );
-
       if (!response.ok) {
         throw new Error("Error updating data");
       }
@@ -88,6 +68,24 @@ function RoadmapSvg() {
   const handleDoing = async (roadmapItem) => {};
 
   const handleTodo = async (roadmapItem) => {};
+
+  function getColor(roadmapItemId) {
+    const roadmapItem = roadmapStatus.find(
+      (item) => item.name === roadmapItemId
+    );
+
+    if (roadmapItem?.status === "finished") {
+      return "hsl(var(--su))";
+    }
+    if (roadmapItem?.status === "doing") {
+      return "hsl(var(--wa))";
+    }
+    if (roadmapItem?.status === "todo") {
+      return "hsl(var(--er))";
+    }
+
+    return "hsl(var(--nc))";
+  }
 
   return (
     <>
