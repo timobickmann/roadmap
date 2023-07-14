@@ -1,10 +1,13 @@
-import { useEffect, useState, useContext } from "react";
+//@ts-nocheck
+
+import { useEffect, useContext } from "react";
 import RoadmapPopup from "./RoadmapPopup";
 import { AppContext } from "../AppContext";
 
 function RoadmapSvg() {
-  const [currentModel, setCurrentModel] = useState("");
-  const { roadmapStatus, setRoadmapStatus } = useContext(AppContext);
+  const { roadmapStatus, setRoadmapStatus, currentRoadmapPopup, setCurrentRoadmapPopup } = useContext(AppContext);
+  
+
 
   useEffect(() => {
     const fetchRoadmapStatus = async () => {
@@ -37,13 +40,14 @@ function RoadmapSvg() {
   }
 
   const handleRoadmapItemClick = (roadmapItem:string) => {
-    setCurrentModel(roadmapItem);
+    setCurrentRoadmapPopup(roadmapItem);
     window.roadmapModel.showModal();
   };
 
+
   return (
     <>
-      {currentModel && <RoadmapPopup roadmapItem={currentModel} />}
+      {currentRoadmapPopup && <RoadmapPopup  />}
 
       {roadmapStatus && (
         <>

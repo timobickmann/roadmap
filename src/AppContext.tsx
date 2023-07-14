@@ -11,6 +11,8 @@ interface IAppContext {
   setRoadmapStatus: React.Dispatch<
     React.SetStateAction<{ _id: string; name: string; status: string }[]>
   >;
+  currentRoadmapPopup: string;
+  setCurrentRoadmapPopup: (roadmapItem: string) => void
 }
 
 interface IAppProvider {
@@ -33,6 +35,9 @@ export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
     { _id: string; name: string; status: string }[]
   >([]);
 
+  const [currentRoadmapPopup, setCurrentRoadmapPopup] = useState("");
+
+
   return (
     <AppContext.Provider
       value={{
@@ -43,6 +48,8 @@ export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
         setCurrentTheme,
         roadmapStatus,
         setRoadmapStatus,
+        currentRoadmapPopup,
+        setCurrentRoadmapPopup
       }}
     >
       {children}
