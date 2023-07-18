@@ -8,7 +8,11 @@ function RoadmapPopup() {
   const { user } = useContext(AuthContext);
 
   const handleFinished = async () => {
+    const updatedStatus = {
+      status: "finished",
+    };
     const newStatus = {
+      name: currentRoadmapPopup,
       status: "finished",
     };
 
@@ -16,7 +20,7 @@ function RoadmapPopup() {
       const id = getItemId(currentRoadmapPopup);
 
       if (id) {
-        await patchData(id, newStatus);
+        await patchData(id, updatedStatus);
       } else {
         await postData(newStatus);
       }
@@ -32,14 +36,18 @@ function RoadmapPopup() {
   };
 
   const handleDoing = async () => {
+    const updatedStatus = {
+      status: "doing",
+    };
     const newStatus = {
+      name: currentRoadmapPopup,
       status: "doing",
     };
 
     try {
       const id = getItemId(currentRoadmapPopup);
       if (id) {
-        await patchData(id, newStatus);
+        await patchData(id, updatedStatus);
       } else {
         await postData(newStatus);
       }
@@ -55,7 +63,11 @@ function RoadmapPopup() {
   };
 
   const handleTodo = async () => {
+    const updatedStatus = {
+      status: "todo",
+    };
     const newStatus = {
+      name: currentRoadmapPopup,
       status: "todo",
     };
 
@@ -63,7 +75,7 @@ function RoadmapPopup() {
       const id = getItemId(currentRoadmapPopup);
 
       if (id) {
-        await patchData(id, newStatus);
+        await patchData(id, updatedStatus);
       } else {
         await postData(newStatus);
       }
@@ -82,12 +94,12 @@ function RoadmapPopup() {
   const getItemId = (roadmapItem: string) => {
     const foundItem = roadmapStatus?.find(
       (item: { _id: string; name: string; status: string; user_id: string }) =>
-        item.name === roadmapItem 
+        item.name === roadmapItem
     );
     return foundItem?._id;
   };
 
-  const patchData = async (id: string, newStatus: { status: string }) => {
+  const patchData = async (id: string, updatedStatus: { status: string }) => {
     try {
       const response = await fetch(
         `http://localhost:4000/api/roadmap-status/${id}`,
@@ -97,7 +109,7 @@ function RoadmapPopup() {
             "Content-Type": "application/json",
             Authorization: `Bearer ${user?.token}`,
           },
-          body: JSON.stringify(newStatus),
+          body: JSON.stringify(updatedStatus),
         }
       );
       if (!response.ok) {
@@ -111,7 +123,7 @@ function RoadmapPopup() {
     }
   };
 
-  const postData = async (newStatus: { status: string }) => {
+  const postData = async (newStatus: { name: string; status: string }) => {
     try {
       const response = await fetch(
         `http://localhost:4000/api/roadmap-status/`,
@@ -138,7 +150,7 @@ function RoadmapPopup() {
   const updateStatus = (newStatus: string) => {
     const _roadmapStatus = roadmapStatus.map((item) => {
       if (item.name === currentRoadmapPopup) {
-        return { ...item, status: newStatus };
+        return { ...item, status: newStatus, name: currentRoadmapPopup };
       }
       return item;
     });

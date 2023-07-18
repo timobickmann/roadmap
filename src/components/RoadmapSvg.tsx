@@ -217,6 +217,7 @@ function RoadmapSvg() {
               strokeDasharray=".33,6.67,0,0"
             />
             <path
+              onClick={() => handleRoadmapItemClick("devOps")}
               id="devops-box"
               fill={getColor("devOps")}
               stroke="#000"
@@ -235,6 +236,7 @@ function RoadmapSvg() {
             </text>
 
             <path
+              onClick={() => handleRoadmapItemClick("desktopApps")}
               id="desktop-apps-box"
               fill={getColor("desktopApps")}
               stroke="#000"
@@ -257,6 +259,7 @@ function RoadmapSvg() {
             </text>
 
             <path
+              onClick={() => handleRoadmapItemClick("mobileApps")}
               id="mobile-apps-box"
               fill={getColor("mobileApps")}
               stroke="#000"
@@ -278,6 +281,7 @@ function RoadmapSvg() {
               {"ps"}
             </text>
             <path
+              onClick={() => handleRoadmapItemClick("api")}
               id="api-box"
               fill={getColor("api")}
               stroke="#000"
@@ -295,6 +299,7 @@ function RoadmapSvg() {
               {"API"}
             </text>
             <path
+              onClick={() => handleRoadmapItemClick("databases")}
               id="databases-box"
               fill={getColor("databases")}
               stroke="#000"
@@ -312,6 +317,7 @@ function RoadmapSvg() {
               {"Databases"}
             </text>
             <path
+              onClick={() => handleRoadmapItemClick("nodejs")}
               id="nodejs-box"
               fill={getColor("nodejs")}
               stroke="#000"
@@ -329,6 +335,7 @@ function RoadmapSvg() {
               {"Nodejs"}
             </text>
             <path
+              onClick={() => handleRoadmapItemClick("ssr")}
               id="ssr-box"
               fill={getColor("ssr")}
               stroke="#000"
@@ -346,6 +353,7 @@ function RoadmapSvg() {
               {"SSR"}
             </text>
             <path
+              onClick={() => handleRoadmapItemClick("tailwind")}
               id="tailwind-box"
               fill={getColor("tailwind")}
               stroke="#000"
@@ -367,6 +375,7 @@ function RoadmapSvg() {
               {"lwind"}
             </text>
             <path
+              onClick={() => handleRoadmapItemClick("react")}
               id="react-box"
               fill={getColor("react")}
               stroke="#000"
@@ -384,6 +393,7 @@ function RoadmapSvg() {
               {"React"}
             </text>
             <path
+              onClick={() => handleRoadmapItemClick("http")}
               id="http-box"
               fill={getColor("http")}
               stroke="#000"
@@ -401,6 +411,7 @@ function RoadmapSvg() {
               {"HTTP"}
             </text>
             <path
+              onClick={() => handleRoadmapItemClick("express")}
               id="express-box"
               fill={getColor("express")}
               stroke="#000"
@@ -418,6 +429,7 @@ function RoadmapSvg() {
               {"Expressjs"}
             </text>
             <path
+              onClick={() => handleRoadmapItemClick("electron")}
               id="electron-box"
               fill={getColor("electron")}
               stroke="#000"
@@ -435,6 +447,7 @@ function RoadmapSvg() {
               {"Electron"}
             </text>
             <path
+              onClick={() => handleRoadmapItemClick("mongoDb")}
               id="mongodb-box"
               fill={getColor("mongoDb")}
               stroke="#000"
@@ -452,6 +465,7 @@ function RoadmapSvg() {
               {"MongoDB"}
             </text>
             <path
+              onClick={() => handleRoadmapItemClick("webApps")}
               id="web-apps-box"
               fill={getColor("webApps")}
               stroke="#000"
@@ -487,6 +501,7 @@ function RoadmapSvg() {
             </g>
             <g>
               <path
+                onClick={() => handleRoadmapItemClick("rest")}
                 id="rest-box"
                 fill={getColor("rest")}
                 stroke="#000"
@@ -506,6 +521,7 @@ function RoadmapSvg() {
             </g>
             <g>
               <path
+                onClick={() => handleRoadmapItemClick("")}
                 id="ui-box"
                 fill={getColor("ui")}
                 stroke="#000"
@@ -525,6 +541,7 @@ function RoadmapSvg() {
             </g>
             <g>
               <path
+                onClick={() => handleRoadmapItemClick("webComponents")}
                 id="web-components-box"
                 fill={getColor("webComponents")}
                 stroke="#000"
@@ -568,6 +585,7 @@ function RoadmapSvg() {
             </g>
             <g>
               <path
+                onClick={() => handleRoadmapItemClick("css")}
                 id="css-box"
                 onClick={() => handleRoadmapItemClick("css")}
                 fill={getColor("css")}
@@ -588,6 +606,7 @@ function RoadmapSvg() {
             </g>
             <g>
               <path
+                onClick={() => handleRoadmapItemClick("sass")}
                 id="sass-box"
                 fill={getColor("sass")}
                 stroke="#000"
@@ -617,6 +636,7 @@ function RoadmapSvg() {
             </g>
             <g>
               <path
+                onClick={() => handleRoadmapItemClick("vue")}
                 id="vue-box"
                 fill={getColor("vue")}
                 stroke="#000"
@@ -649,6 +669,7 @@ function RoadmapSvg() {
             </g>
             <g>
               <path
+                onClick={() => handleRoadmapItemClick("sql")}
                 id="sql-box"
                 fill={getColor("sql")}
                 stroke="#000"
@@ -678,6 +699,7 @@ function RoadmapSvg() {
             </g>
             <g>
               <path
+                onClick={() => handleRoadmapItemClick("graphQl")}
                 id="graph-box"
                 fill={getColor("graphQl")}
                 stroke="#000"
@@ -697,6 +719,7 @@ function RoadmapSvg() {
             </g>
             <g>
               <path
+                onClick={() => handleRoadmapItemClick("reactNative")}
                 id="native-box"
                 fill={getColor("reactNative")}
                 stroke="#000"
@@ -716,6 +739,7 @@ function RoadmapSvg() {
             </g>
             <g>
               <path
+                onClick={() => handleRoadmapItemClick("uiLibs")}
                 id="ui-libs-box"
                 fill={getColor("uiLibs")}
                 stroke="#000"
@@ -735,6 +759,7 @@ function RoadmapSvg() {
             </g>
             <g>
               <path
+                onClick={() => handleRoadmapItemClick("authentication")}
                 id="auth-box"
                 fill={getColor("authentication")}
                 stroke="#000"
@@ -754,6 +779,7 @@ function RoadmapSvg() {
             </g>
             <g>
               <path
+                onClick={() => handleRoadmapItemClick("componentLibs")}
                 id="component-libs-box"
                 fill={getColor("componentLibs")}
                 stroke="#000"
