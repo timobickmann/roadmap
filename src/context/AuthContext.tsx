@@ -3,7 +3,6 @@ import { createContext, useReducer, useEffect } from "react";
 interface IUser {
   email: string;
   token: string;
-  user_id: string;
 }
 
 interface IAuthContext {

@@ -8,19 +8,18 @@ function RoadmapPopup() {
   const { user } = useContext(AuthContext);
 
   const handleFinished = async () => {
+    const newStatus = {
+      status: "finished",
+    };
+
     try {
       const id = getItemId(currentRoadmapPopup);
-      console.log(id);
-      if (!id) {
-        console.log(`Item ${currentRoadmapPopup} not found`);
-        return;
+
+      if (id) {
+        await patchData(id, newStatus);
+      } else {
+        await postData(newStatus);
       }
-
-      const newStatus = {
-        status: "finished",
-      };
-
-      await patchData(id, newStatus);
       console.log(`Item "${currentRoadmapPopup}" marked as finished`);
     } catch (error) {
       console.error(
@@ -33,19 +32,17 @@ function RoadmapPopup() {
   };
 
   const handleDoing = async () => {
+    const newStatus = {
+      status: "doing",
+    };
+
     try {
       const id = getItemId(currentRoadmapPopup);
-      console.log(id);
-      if (!id) {
-        console.log(`Item ${currentRoadmapPopup} not found`);
-        return;
+      if (id) {
+        await patchData(id, newStatus);
+      } else {
+        await postData(newStatus);
       }
-
-      const newStatus = {
-        status: "doing",
-      };
-
-      await patchData(id, newStatus);
       console.log(`Item "${currentRoadmapPopup}" marked as doing`);
     } catch (error) {
       console.error(
@@ -85,7 +82,7 @@ function RoadmapPopup() {
   const getItemId = (roadmapItem: string) => {
     const foundItem = roadmapStatus?.find(
       (item: { _id: string; name: string; status: string; user_id: string }) =>
-        item.name === roadmapItem && item.user_id === user?.user_id
+        item.name === roadmapItem 
     );
     return foundItem?._id;
   };
