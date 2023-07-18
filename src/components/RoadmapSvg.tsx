@@ -70,8 +70,6 @@ function RoadmapSvg() {
 
       {roadmapStatus && (
         <>
-          {/* Site wird nicht bzw nur ganz kurz gerendert, wenn die nächste Zeile nicht auskommentiert ist. */}
-
           <svg
             className="w-4/5 sm:w-full md:w-4/5 md:max-w-[30rem]  lg:max-w-[40rem]"
             viewBox="0 0 406 963"
