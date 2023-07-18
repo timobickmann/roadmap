@@ -5,7 +5,11 @@ const {
   getAllRoadmapStatus,
   updateRoadmapStatus,
 } = require("../controllers/roadmapStatusController");
+const requireAuth = require("../middleware/requireAuth");
+
 const router = express.Router();
+
+router.use(requireAuth);
 
 router.get("/", getAllRoadmapStatus);
 
