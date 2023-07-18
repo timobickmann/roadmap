@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 
 // GET ALL
 const getAllRoadmapStatus = async (req, res) => {
+  const user_id = req.user._id;
   const allRoadmapStatus = await RoadmapStatus.find({});
 
   res.status(200).json(allRoadmapStatus);
@@ -27,10 +28,9 @@ const getRoadmapStatus = async (req, res) => {
 
 // CREATE NEW
 const createRoadmapStatus = async (req, res) => {
-  const { name, status } = req.body;
-  const user_id = req.user._id;
-
   try {
+    const { name, status } = req.body;
+    const user_id = req.user._id;
     const roadmapStatus = await RoadmapStatus.create({ name, status, user_id });
     res.status(200).json(roadmapStatus);
   } catch (error) {

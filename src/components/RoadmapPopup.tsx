@@ -5,8 +5,7 @@ import { AuthContext } from "../context/AuthContext";
 function RoadmapPopup() {
   const { roadmapStatus, setRoadmapStatus, currentRoadmapPopup } =
     useContext(AppContext);
-    const { user } = useContext(AuthContext);
-
+  const { user } = useContext(AuthContext);
 
   const handleFinished = async () => {
     try {
@@ -17,11 +16,11 @@ function RoadmapPopup() {
         return;
       }
 
-      const updatedStatus = {
+      const newStatus = {
         status: "finished",
       };
 
-      await patchData(id, updatedStatus);
+      await patchData(id, newStatus);
       console.log(`Item "${currentRoadmapPopup}" marked as finished`);
     } catch (error) {
       console.error(
@@ -42,11 +41,11 @@ function RoadmapPopup() {
         return;
       }
 
-      const updatedStatus = {
+      const newStatus = {
         status: "doing",
       };
 
-      await patchData(id, updatedStatus);
+      await patchData(id, newStatus);
       console.log(`Item "${currentRoadmapPopup}" marked as doing`);
     } catch (error) {
       console.error(
@@ -59,18 +58,19 @@ function RoadmapPopup() {
   };
 
   const handleTodo = async () => {
+    const newStatus = {
+      status: "todo",
+    };
+
     try {
       const id = getItemId(currentRoadmapPopup);
-      if (!id) {
-        console.log(`Item ${currentRoadmapPopup} not found`);
-        return;
+
+      if (id) {
+        await patchData(id, newStatus);
+      } else {
+        await postData(newStatus);
       }
 
-      const updatedStatus = {
-        status: "todo",
-      };
-
-      await patchData(id, updatedStatus);
       console.log(`Item "${currentRoadmapPopup}" marked as todo`);
     } catch (error) {
       console.error(
@@ -90,7 +90,7 @@ function RoadmapPopup() {
     return foundItem?._id;
   };
 
-  const patchData = async (id: string, updatedStatus: { status: string }) => {
+  const patchData = async (id: string, newStatus: { status: string }) => {
     try {
       const response = await fetch(
         `http://localhost:4000/api/roadmap-status/${id}`,
@@ -98,8 +98,9 @@ function RoadmapPopup() {
           method: "PATCH",
           headers: {
             "Content-Type": "application/json",
+            Authorization: `Bearer ${user?.token}`,
           },
-          body: JSON.stringify(updatedStatus),
+          body: JSON.stringify(newStatus),
         }
       );
       if (!response.ok) {
@@ -110,6 +111,30 @@ function RoadmapPopup() {
       console.log("Updated item:", updatedItem);
     } catch (error) {
       throw new Error("Error updating data");
+    }
+  };
+
+  const postData = async (newStatus: { status: string }) => {
+    try {
+      const response = await fetch(
+        `http://localhost:4000/api/roadmap-status/`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${user?.token}`,
+          },
+          body: JSON.stringify(newStatus),
+        }
+      );
+      if (!response.ok) {
+        throw new Error("Error setting data");
+      }
+
+      const updatedItem = await response.json();
+      console.log("Updated item:", updatedItem);
+    } catch (error) {
+      throw new Error("Error setting data");
     }
   };
 
