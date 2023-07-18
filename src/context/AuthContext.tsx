@@ -31,12 +31,11 @@ export const authReducer = (state: IUser | null, action: Action) => {
 
 export const AuthProvider: React.FC<IAuthProvider> = ({ children }) => {
   const [user, dispatch] = useReducer(authReducer, null);
-  
 
   useEffect(() => {
     const storedUser = JSON.parse(localStorage.getItem("user") || "{}");
 
-    if (storedUser) {
+    if (storedUser.length > 0) {
       dispatch({
         type: "LOGIN",
         payload: storedUser,
