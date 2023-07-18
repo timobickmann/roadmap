@@ -3,11 +3,15 @@ import { useContext, useEffect, useRef } from "react";
 import { FaBars } from "react-icons/fa6";
 import { SiGithub } from "react-icons/si";
 import { NavLink } from "react-router-dom";
+import useLogout from "../hooks/useLogout";
+import { AuthContext } from "../context/AuthContext";
 
 function Header() {
   const { isMobile, toggleSidebarIsOpened, setCurrentTheme } =
     useContext(AppContext);
   const detailsRef = useRef<HTMLDetailsElement>(null);
+  const { logout } = useLogout();
+  const { user } = useContext(AuthContext);
 
   useEffect(() => {
     function handleClickOutsideTheme(event: MouseEvent) {
@@ -28,6 +32,10 @@ function Header() {
 
   function handleThemeClick(theme: string) {
     setCurrentTheme(theme);
+  }
+
+  function handleLogout() {
+    logout();
   }
 
   return (
@@ -66,12 +74,25 @@ function Header() {
         </div>
 
         <ul className="flex items-center gap-5">
-          <li className="rounded  px-4 py-1 hover:bg-neutral hover:text-neutral-content">
-            <NavLink to="/signup">Sign-Up</NavLink>
-          </li>
-          <li className="rounded  px-4 py-1 hover:bg-neutral hover:text-neutral-content">
-            <NavLink to="/login">Login</NavLink>
-          </li>
+          {user && (
+            <>
+              <li className="">{user.email}</li>
+              <li className="rounded  px-4 py-1 hover:bg-neutral hover:text-neutral-content">
+                <button onClick={handleLogout}>Log-Out</button>
+              </li>
+            </>
+          )}
+          {!user && (
+            <>
+              <li className="rounded  px-4 py-1 hover:bg-neutral hover:text-neutral-content">
+                <NavLink to="/signup">Sign-Up</NavLink>
+              </li>
+              <li className="rounded  px-4 py-1 hover:bg-neutral hover:text-neutral-content">
+                <NavLink to="/login">Login</NavLink>
+              </li>
+            </>
+          )}
+
           <li>
             <details ref={detailsRef}>
               <summary className="cursor-pointer list-none rounded  px-4 py-1 hover:bg-neutral hover:text-neutral-content">

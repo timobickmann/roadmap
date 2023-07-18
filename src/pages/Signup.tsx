@@ -1,18 +1,22 @@
 import { useState } from "react";
+import useSignup from "../hooks/useSignup";
 
 function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { error, isLoading, signup } = useSignup();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    await signup(email, password);
   };
 
   return (
     <>
-      <form className="" onSubmit={handleSubmit}>
+      <form className="flex flex-col items-start gap-5" onSubmit={handleSubmit}>
         <h3>Sign up</h3>
-        <label>
+        <label className="flex flex-col gap-2">
           Email
           <input
             type="email"
@@ -20,7 +24,7 @@ function Signup() {
             value={email}
           />
         </label>
-        <label>
+        <label className="flex flex-col gap-2">
           Password
           <input
             type="password"
@@ -28,7 +32,8 @@ function Signup() {
             value={password}
           />
         </label>
-        <button>Sign up</button>
+        <button disabled={isLoading} className="bg-gray-500">Sign up Button</button>
+        {error && <p className="text-error-content bg-error">{error}</p>}
       </form>
     </>
   );
