@@ -31,8 +31,6 @@ function RoadmapPopup() {
         (error as Error).message
       );
     }
-
-    updateStatus("finished");
   };
 
   const handleDoing = async () => {
@@ -58,8 +56,6 @@ function RoadmapPopup() {
         (error as Error).message
       );
     }
-
-    updateStatus("doing");
   };
 
   const handleTodo = async () => {
@@ -87,8 +83,6 @@ function RoadmapPopup() {
         (error as Error).message
       );
     }
-
-    updateStatus("todo");
   };
 
   const getItemId = (roadmapItem: string) => {
@@ -118,6 +112,7 @@ function RoadmapPopup() {
 
       const updatedItem = await response.json();
       console.log("Updated item:", updatedItem);
+      updateStatus(updatedItem.status);
     } catch (error) {
       throw new Error("Error updating data");
     }
@@ -140,20 +135,31 @@ function RoadmapPopup() {
         throw new Error("Error setting data");
       }
 
-      const updatedItem = await response.json();
-      console.log("Updated item:", updatedItem);
+      const newItem = await response.json();
+      console.log("Updated item:", newItem);
+      createStatus(newItem.name, newItem.status, newItem.user_id, newItem._id);
     } catch (error) {
       throw new Error("Error setting data");
     }
   };
 
-  const updateStatus = (newStatus: string) => {
+  const updateStatus = (updatedStatus: string) => {
     const _roadmapStatus = roadmapStatus.map((item) => {
       if (item.name === currentRoadmapPopup) {
-        return { ...item, status: newStatus, name: currentRoadmapPopup };
+        return { ...item, status: updatedStatus };
       }
       return item;
     });
+    setRoadmapStatus(_roadmapStatus);
+  };
+
+  const createStatus = (
+    name: string,
+    status: string,
+    user_id: string,
+    _id: string
+  ) => {
+    const _roadmapStatus = [...roadmapStatus, { name, status, user_id, _id }];
     setRoadmapStatus(_roadmapStatus);
   };
 
