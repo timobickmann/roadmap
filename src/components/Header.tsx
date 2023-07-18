@@ -1,4 +1,4 @@
-import { AppContext } from "../AppContext";
+import { AppContext } from "../context/AppContext";
 import { useContext, useEffect, useRef } from "react";
 import { FaBars } from "react-icons/fa6";
 import { SiGithub } from "react-icons/si";

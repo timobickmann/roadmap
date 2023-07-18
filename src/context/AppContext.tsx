@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-import useMediaQuery from "./components/hooks/useMediaQuery";
+import useMediaQuery from "../hooks/useMediaQuery";
 
 interface IAppContext {
   sidebarIsOpened: boolean;
@@ -12,7 +12,7 @@ interface IAppContext {
     React.SetStateAction<{ _id: string; name: string; status: string }[]>
   >;
   currentRoadmapPopup: string;
-  setCurrentRoadmapPopup: (roadmapItem: string) => void
+  setCurrentRoadmapPopup: (roadmapItem: string) => void;
 }
 
 interface IAppProvider {
@@ -37,7 +37,6 @@ export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
 
   const [currentRoadmapPopup, setCurrentRoadmapPopup] = useState("");
 
-
   return (
     <AppContext.Provider
       value={{
@@ -49,7 +48,7 @@ export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
         roadmapStatus,
         setRoadmapStatus,
         currentRoadmapPopup,
-        setCurrentRoadmapPopup
+        setCurrentRoadmapPopup,
       }}
     >
       {children}

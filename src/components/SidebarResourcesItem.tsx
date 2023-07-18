@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useContext } from "react";
-import { AppContext } from "../AppContext";
+import { AppContext } from "../context/AppContext";
 import setupData from "../data/setup.json";
 import resourcesData from "../data/resources.json";
 import howTosData from "../data/howTos.json";

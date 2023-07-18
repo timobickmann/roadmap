@@ -1,7 +1,7 @@
 import "./index.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useContext } from "react";
-import { AppContext } from "./AppContext";
+import { AppContext } from "./context/AppContext";
 import Header from "./components/Header";
 import SidebarResources from "./components/SidebarResources";
 import Home from "./pages/Home";

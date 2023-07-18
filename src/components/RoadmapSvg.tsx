@@ -2,12 +2,15 @@
 
 import { useEffect, useContext } from "react";
 import RoadmapPopup from "./RoadmapPopup";
-import { AppContext } from "../AppContext";
+import { AppContext } from "../context/AppContext";
 
 function RoadmapSvg() {
-  const { roadmapStatus, setRoadmapStatus, currentRoadmapPopup, setCurrentRoadmapPopup } = useContext(AppContext);
-  
-
+  const {
+    roadmapStatus,
+    setRoadmapStatus,
+    currentRoadmapPopup,
+    setCurrentRoadmapPopup,
+  } = useContext(AppContext);
 
   useEffect(() => {
     const fetchRoadmapStatus = async () => {
@@ -23,7 +26,8 @@ function RoadmapSvg() {
 
   function getColor(roadmapItemId: string) {
     const roadmapItem = roadmapStatus?.find(
-      (item: {_id:string, name: string, status:string}) => item.name === roadmapItemId
+      (item: { _id: string; name: string; status: string }) =>
+        item.name === roadmapItemId
     );
 
     if (roadmapItem?.status === "finished") {
@@ -39,15 +43,14 @@ function RoadmapSvg() {
     return "hsl(var(--nc))";
   }
 
-  const handleRoadmapItemClick = (roadmapItem:string) => {
+  const handleRoadmapItemClick = (roadmapItem: string) => {
     setCurrentRoadmapPopup(roadmapItem);
     window.roadmapModel.showModal();
   };
 
-
   return (
     <>
-      {currentRoadmapPopup && <RoadmapPopup  />}
+      {currentRoadmapPopup && <RoadmapPopup />}
 
       {roadmapStatus && (
         <>
