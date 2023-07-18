@@ -3,6 +3,7 @@
 import { useEffect, useContext } from "react";
 import RoadmapPopup from "./RoadmapPopup";
 import { AppContext } from "../context/AppContext";
+import { AuthContext } from "../context/AuthContext";
 
 function RoadmapSvg() {
   const {
@@ -11,18 +12,25 @@ function RoadmapSvg() {
     currentRoadmapPopup,
     setCurrentRoadmapPopup,
   } = useContext(AppContext);
+  const { user } = useContext(AuthContext);
 
   useEffect(() => {
     const fetchRoadmapStatus = async () => {
-      const response = await fetch("http://localhost:4000/api/roadmap-status");
+      const response = await fetch("http://localhost:4000/api/roadmap-status", {
+        headers: {
+          Authorization: `Bearer ${user.token}`,
+        },
+      });
       const json = await response.json();
 
       if (response.ok) {
         setRoadmapStatus(json);
       }
     };
-    fetchRoadmapStatus();
-  }, []);
+    if (user) {
+      fetchRoadmapStatus();
+    }
+  }, [user]);
 
   function getColor(roadmapItemId: string) {
     const roadmapItem = roadmapStatus?.find(

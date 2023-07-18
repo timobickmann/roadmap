@@ -28,9 +28,10 @@ const getRoadmapStatus = async (req, res) => {
 // CREATE NEW
 const createRoadmapStatus = async (req, res) => {
   const { name, status } = req.body;
+  const user_id = req.user._id;
 
   try {
-    const roadmapStatus = await RoadmapStatus.create({ name, status });
+    const roadmapStatus = await RoadmapStatus.create({ name, status, user_id });
     res.status(200).json(roadmapStatus);
   } catch (error) {
     res.status(400).json({ error: error.message });

@@ -1,7 +1,13 @@
 import "./index.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import { useContext } from "react";
 import { AppContext } from "./context/AppContext";
+import { AuthContext } from "./context/AuthContext";
 //import Components
 import Header from "./components/Header";
 import SidebarResources from "./components/SidebarResources";
@@ -31,6 +37,7 @@ import TsResources from "./pages/resources/TsResources";
 
 function App() {
   const { currentTheme } = useContext(AppContext);
+  const { user } = useContext(AuthContext);
   return (
     <>
       <Router>
@@ -45,8 +52,14 @@ function App() {
             <main>
               <Routes>
                 <Route index element={<Home />} />
-                <Route path="/signup" element={<Signup />} />
-                <Route path="/login" element={<Login />} />
+                <Route
+                  path="/signup"
+                  element={user ? <Navigate to="/" /> : <Signup />}
+                />
+                <Route
+                  path="/login"
+                  element={user ? <Navigate to="/" /> : <Login />}
+                />
                 <Route path="/roadmap" element={<Roadmap />} />
                 <Route path="/resources/vite" element={<ViteResources />} />
                 <Route path="/resources/vite/setup" element={<ViteSetup />} />

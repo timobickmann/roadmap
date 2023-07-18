@@ -1,7 +1,7 @@
 const jwt = require("jsonwebtoken");
-const User = require("../models/User");
+const User = require("../models/userModel");
 
-async function requireAuth(req, res, next) {
+const requireAuth = async (req, res, next) => {
   const { authorization } = req.headers;
 
   if (!authorization) {
@@ -11,13 +11,13 @@ async function requireAuth(req, res, next) {
   const token = authorization.split(" ")[1];
 
   try {
-    const {_id} = jwt.verify(token, process.env.SECRET);
-    req.user = await User.findOne({_id}).select("_id")
+    const { _id } = jwt.verify(token, process.env.SECRET);
+    req.user = await User.findOne({ _id }).select("_id");
     next();
-  }
-  catch (error) {
+  } catch (error) {
     console.log(error);
     return res.status(401).json({ error: "Invalid token" });
   }
-}
-export default requireAuth;
+};
+
+module.exports = requireAuth;

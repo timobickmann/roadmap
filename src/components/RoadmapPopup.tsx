@@ -1,9 +1,12 @@
 import { useContext } from "react";
 import { AppContext } from "../context/AppContext";
+import { AuthContext } from "../context/AuthContext";
 
 function RoadmapPopup() {
   const { roadmapStatus, setRoadmapStatus, currentRoadmapPopup } =
     useContext(AppContext);
+    const { user } = useContext(AuthContext);
+
 
   const handleFinished = async () => {
     try {
@@ -81,8 +84,8 @@ function RoadmapPopup() {
 
   const getItemId = (roadmapItem: string) => {
     const foundItem = roadmapStatus?.find(
-      (item: { _id: string; name: string; status: string }) =>
-        item.name === roadmapItem
+      (item: { _id: string; name: string; status: string; user_id: string }) =>
+        item.name === roadmapItem && item.user_id === user?.user_id
     );
     return foundItem?._id;
   };
@@ -125,15 +128,22 @@ function RoadmapPopup() {
       <dialog id="roadmapModel" className="modal">
         <form method="dialog" className="modal-box">
           <div className="flex justify-center gap-10">
-            <div onClick={() => handleFinished()} className="btn-success btn">
-              Finished
-            </div>
-            <div onClick={() => handleDoing()} className="btn-warning btn">
-              Doing
-            </div>
-            <div onClick={() => handleTodo()} className="btn-error btn">
-              To Do
-            </div>
+            {user && (
+              <>
+                <div
+                  onClick={() => handleFinished()}
+                  className="btn-success btn"
+                >
+                  Finished
+                </div>
+                <div onClick={() => handleDoing()} className="btn-warning btn">
+                  Doing
+                </div>
+                <div onClick={() => handleTodo()} className="btn-error btn">
+                  To Do
+                </div>
+              </>
+            )}
           </div>
           <h2 className="mt-5 text-xl font-bold">
             {currentRoadmapPopup.toUpperCase()}
