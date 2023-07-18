@@ -1,5 +1,4 @@
 //@ts-nocheck
-
 import { useEffect, useContext } from "react";
 import RoadmapPopup from "./RoadmapPopup";
 import { AppContext } from "../context/AppContext";
@@ -18,7 +17,7 @@ function RoadmapSvg() {
     const fetchRoadmapStatus = async () => {
       const response = await fetch("http://localhost:4000/api/roadmap-status", {
         headers: {
-          Authorization: `Bearer ${user.token}`,
+          Authorization: `Bearer ${user?.token}`,
         },
       });
       const json = await response.json();
@@ -50,6 +49,15 @@ function RoadmapSvg() {
 
     return "hsl(var(--nc))";
   }
+
+  // BUILD
+  // THIS
+  // WITH
+  // STATE
+  // INSTEAD
+  // OF
+  // WINDOW
+  // MODEL
 
   const handleRoadmapItemClick = (roadmapItem: string) => {
     setCurrentRoadmapPopup(roadmapItem);
@@ -585,7 +593,6 @@ function RoadmapSvg() {
             </g>
             <g>
               <path
-                onClick={() => handleRoadmapItemClick("css")}
                 id="css-box"
                 onClick={() => handleRoadmapItemClick("css")}
                 fill={getColor("css")}
