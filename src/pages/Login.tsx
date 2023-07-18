@@ -14,9 +14,9 @@ function Login() {
 
   return (
     <>
-      <form className="" onSubmit={handleSubmit}>
+      <form className="flex flex-col items-start gap-5" onSubmit={handleSubmit}>
         <h3>Login</h3>
-        <label>
+        <label className="flex flex-col gap-2">
           Email
           <input
             type="email"
@@ -24,7 +24,7 @@ function Login() {
             value={email}
           />
         </label>
-        <label>
+        <label className="flex flex-col gap-2">
           Password
           <input
             type="password"
@@ -32,7 +32,7 @@ function Login() {
             value={password}
           />
         </label>
-        <button disabled={isLoading}>Login</button>
+        <button disabled={isLoading} className="bg-gray-500">Login</button>
         {error && <p className="bg-error text-error-content">{error}</p>}
       </form>
     </>
