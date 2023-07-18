@@ -2,10 +2,14 @@ import "./index.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useContext } from "react";
 import { AppContext } from "./context/AppContext";
+//import Components
 import Header from "./components/Header";
 import SidebarResources from "./components/SidebarResources";
+//import Pages
 import Home from "./pages/Home";
 import Roadmap from "./pages/Roadmap";
+import Signup from "./pages/Signup";
+import Login from "./pages/Login";
 import ViteResources from "./pages/resources/ViteResources";
 import ViteSetup from "./pages/resources/ViteSetup";
 import ViteHowTos from "./pages/resources/ViteHowTos";
@@ -41,6 +45,8 @@ function App() {
             <main>
               <Routes>
                 <Route index element={<Home />} />
+                <Route path="/signup" element={<Signup />} />
+                <Route path="/login" element={<Login />} />
                 <Route path="/roadmap" element={<Roadmap />} />
                 <Route path="/resources/vite" element={<ViteResources />} />
                 <Route path="/resources/vite/setup" element={<ViteSetup />} />

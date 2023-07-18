@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { AppContext } from "../context/AppContext";
 import setupData from "../data/setup.json";
@@ -20,33 +20,33 @@ function SidebarResourcesItem({ sidebarItem }: IProps) {
   return (
     <>
       {isSetup && (
-        <Link
+        <NavLink
           className="rounded px-4 py-1 hover:bg-neutral hover:text-neutral-content"
           onClick={toggleSidebarIsOpened}
           to={`/resources/${sidebarItem}/setup`}
         >
           Setup
-        </Link>
+        </NavLink>
       )}
 
       {isResource && (
-        <Link
+        <NavLink
           className="rounded px-4 py-1 hover:bg-neutral hover:text-neutral-content"
           onClick={toggleSidebarIsOpened}
           to={`/resources/${sidebarItem}`}
         >
           Resources
-        </Link>
+        </NavLink>
       )}
 
       {isHowTo && (
-        <Link
+        <NavLink
           className="rounded px-4 py-1 hover:bg-neutral hover:text-neutral-content"
           onClick={toggleSidebarIsOpened}
           to={`/resources/${sidebarItem}/howtos`}
         >
           How-Tos
-        </Link>
+        </NavLink>
       )}
     </>
   );

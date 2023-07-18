@@ -2,6 +2,7 @@ import { AppContext } from "../context/AppContext";
 import { useContext, useEffect, useRef } from "react";
 import { FaBars } from "react-icons/fa6";
 import { SiGithub } from "react-icons/si";
+import { NavLink } from "react-router-dom";
 
 function Header() {
   const { isMobile, toggleSidebarIsOpened, setCurrentTheme } =
@@ -41,6 +42,7 @@ function Header() {
               >
                 <FaBars />
               </button>
+              {/* Logo */}
               <svg
                 width={99}
                 height={26}
@@ -63,7 +65,13 @@ function Header() {
           )}
         </div>
 
-        <ul className="flex gap-5">
+        <ul className="flex items-center gap-5">
+          <li className="rounded  px-4 py-1 hover:bg-neutral hover:text-neutral-content">
+            <NavLink to="/signup">Sign-Up</NavLink>
+          </li>
+          <li className="rounded  px-4 py-1 hover:bg-neutral hover:text-neutral-content">
+            <NavLink to="/login">Login</NavLink>
+          </li>
           <li>
             <details ref={detailsRef}>
               <summary className="cursor-pointer list-none rounded  px-4 py-1 hover:bg-neutral hover:text-neutral-content">
