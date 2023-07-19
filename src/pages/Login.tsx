@@ -14,25 +14,31 @@ function Login() {
 
   return (
     <>
-      <form className="flex flex-col items-start gap-5" onSubmit={handleSubmit}>
-        <h3>Login</h3>
-        <label className="flex flex-col gap-2">
-          Email
-          <input
-            type="email"
-            onChange={(e) => setEmail(e.target.value)}
-            value={email}
-          />
+      <form className="form-control w-full max-w-xs gap-1" onSubmit={handleSubmit}>
+        <h3 className="text-3xl mb-10">Login</h3>
+        <label className="label">
+          <span className="label-text">Email</span>
         </label>
-        <label className="flex flex-col gap-2">
-          Password
-          <input
-            type="password"
-            onChange={(e) => setPassword(e.target.value)}
-            value={password}
-          />
+        <input
+          className="input-bordered input w-full max-w-xs"
+          type="email"
+          onChange={(e) => setEmail(e.target.value)}
+          value={email}
+        />
+
+        <label className="label">
+          <span className="label-text">Password</span>
         </label>
-        <button disabled={isLoading} className="bg-gray-500">Login</button>
+        <input
+          className="input-bordered input w-full max-w-xs"
+          type="password"
+          onChange={(e) => setPassword(e.target.value)}
+          value={password}
+        />
+
+        <button disabled={isLoading} className="btn mt-5">
+          Login
+        </button>
         {error && <p className="bg-error text-error-content">{error}</p>}
       </form>
     </>
